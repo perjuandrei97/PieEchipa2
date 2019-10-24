@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Inregistare Elev</title></head>
+<body background="picregistr.jpg" >
+<form name="registration_form" action="registrationelev.php"method="post">
+<center><b><h1>Inregistrare Elev</h1></b></center>
+<br><center>
+<b><i>Nume:</i></b>
+<input type="text" name="nume_candidati" value="" required /><br><br>
+<b><i>Prenume:</i></b>
+<input  type="text" name="prenume_candidati" value="" required /><br><br>
+<b><i>Adresa:</i></b>
+<input type="text" name="adresa_candidati" value=""  required /><br><br>
+<b><i>Telefon:</i></b>
+<input type="phone" class="form-control rounded-right" placeholder="Telefon" name="telephone" pattern="[0-9]{10}" title="Doar cifre" maxlength="10" size="30" required=""><br><br>
+<b><i>Email:</i></b>
+<input type="text" name="email_candidati" value="" required /><br><br>
+<b><i>Clasa:</i></b>
+<input    type="text" name="clasa_candidati" value="" maxlength="2" required /><br><br>
+<b><i>Scoala</i></b>
+<input   type="text" name="scoala_candidati" value="" required/><br><br>
+<b><i>Judet:</i></b>
+<input   type="text" name="judet_candidati" value="" required /><br><br>
+<b><i>Localitate:</i></b>
+<input  type="text" name="localitate_candidati" value="" required /><br><br>
+<b><i>Username:</i></b>
+<input    type="text" name="user_candidati" value="" required /><br><br>
+<b><i>Parola:</i></b>
+<input  type="password" name="parola_candidati" value="" required /><br><br>
+<button class"button">Inregistrare</button>
+
+</center>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+Home
+Sign up
+Login
+SUCCESS!
+Below you will find your MySQL login information and database name we have created for you.
+
+Make sure you keep the details safe, as you will not be able to get access to your database without them.
+
+We have emailed you a copy of them too. Check your spam folder just in case you have not receive them.
+
+
+
+Username: 7YNzXacPRV
+
+Password: 9Mx89MjGuI
+
+Database Name: 7YNzXacPRV
+
+Server: remotemysql.com
+
+Port: 3306
+
+
+
+Use the link at the top of the page to log in to your database
+
+If your database goes above the allowed size limit of 100MB then your permissions to add to the database will be removed until you reduce its size.
+
+Any databases unused over a 30 day period will be deleted.

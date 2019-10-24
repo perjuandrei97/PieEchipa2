@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head><title>Pagina Contact</title></head>
+<body background="contact.jpg">
+<form name="contact" action="contact.php"method="post">
+<center><b><h1>Pagina de Contact</h1></b></center>
+<br><center>
+<b><i>Subiect:</i></b>
+<input type="text" class="form-control rounded-right" name="subiect" maxlength="45" size="30" required=""><br><br>
+<b><i>Nume:</i></b>
+<input type="text" class="form-control rounded-right" name="nume" maxlength="45" size="30" required=""><br><br>
+<b><i>Prenume:</i></b>
+<input type="text" class="form-control rounded-right" name="prenume" maxlength="45" size="30" required=""><br><br>
+<b><i>Telefon:</i></b>
+<input type="phone" class="form-control rounded-right"  name="telefon" pattern="[0-9]{10}" title="Doar cifre" maxlength="10" size="30" required=""><br><br>
+<b><i>Email:</i></b>
+<input type="email" class="form-control rounded-right"  name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Introduceti o adresa de email valida" maxlength="45" size="30" required=""><br><br>
+<b><i>Mesaj:</i></b><br><br>
+<textarea rows="8" id="message" class="form-control rounded-left rounded-right" name="mesaj" maxlength="1000" cols="40" required=" border-left:none;"></textarea><br><br>
+<button class"button">Trimitrere</button>
+
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<html>
+ <head>
+  <title>Olimpiada nationala</title>
+  <meta charset ="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1 ">
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+body {font-family: Arial;
+height :100%;
+margin: 0;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  height:100%;
+}
+</style>
+ </head>
+ <body background="onpic1.jpg">
+ 
+
+ <div class="header">
+ <h1><center><i>Olimpiada națională</i></center></h1>
+ </div>
+<div class="tab">
+  <button class="tablinks" onclick="opentab(event, 'Home')">Home</button>
+  <button class="tablinks" onclick="opentab(event, 'Candidati')">Candidați</button>
+  <button class="tablinks" onclick="opentab(event, 'Subiecte')">Subiecte</button>
+   <button class="tablinks" onclick="opentab(event, 'Rezultate')">Rezultate</button>
+     <button class="tablinks" onclick="opentab(event, 'Contact')">Contact</button>
+
+</div>
+ 
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+<table>
+  <tr>
+    <th>Cod</th>
+    <th>Nume</th>
+    <th>Prenume</th>
+    <th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
+
+</div>
+
+<div id="Candidati" class="tabcontent">
+
+  <h3>Candidați</h3>
+
+</div>
+
+<div id="Subiecte" class="tabcontent">
+  <h3>Subiecte</h3>
+  <p></p>
+</div>  
+
+<div id="Rezultate" class="tabcontent">
+  <h3>Rezultate</h3>
+  <p></p>
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+  <p></p>
+</div>
+
+<script>
+function opentab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+ 
+ </body>
+</html>
