@@ -138,6 +138,16 @@ INSERT INTO `contact` (`cod`, `subiect`, `nume`, `prenume`, `telefon`, `email`, 
 -- Table structure for table `rezultate`
 --
 
+CREATE TABLE `materie` (
+	`cod_materie` int(11) NOT NULL,
+	`denumire_materie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `materie` (`cod_materie`, `denumire_materie`) VALUES
+(3, ' Matematica'),
+(4, ' Fizica'),
+(5, ' Geografie');
+
 CREATE TABLE `rezultate` (
   `cod` int(45) NOT NULL,
   `nume_candidati` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -148,29 +158,30 @@ CREATE TABLE `rezultate` (
   `judet_candidati` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `proba1` varchar(45) COLLATE utf8_unicode_ci DEFAULT '0',
   `proba2` varchar(45) COLLATE utf8_unicode_ci DEFAULT '0',
-  `proba3` varchar(45) COLLATE utf8_unicode_ci DEFAULT '0'
+  `proba3` varchar(45) COLLATE utf8_unicode_ci DEFAULT '0',
+  `cod_materie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `rezultate`
 --
 
-INSERT INTO `rezultate` (`cod`, `nume_candidati`, `prenume_candidati`, `clasa_candidati`, `scoala_candidati`, `localitate_candidati`, `judet_candidati`, `proba1`, `proba2`, `proba3`) VALUES
-(3, ' Anca', ' Irina', '  12  ', ' BUC', ' DJ', ' DJ ', ' 9', ' 9', ' 9'),
-(4, 'Andreaa', 'Aschii', '10', 'BUC', 'BR', 'BR', '6', '6', '6'),
-(5, 'xvnbxzbvz', 'vxzvxzv', '22', 'vdx', '4324234', 'fgdfgfd', '4', '4', '4'),
-(6, 'bbbbb', 'cccc', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 'cccc', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, '  cbvbvncsbdjkfjk', ' dbfbdsbkjdsbjbjdfsjbkdfsjk', '10 ', ' vfjcvbdskjJJ', ' hfjdsjkfdsjjkh', ' HVDJJJHD  ', ' 8', ' 8', ' 8'),
-(16, 'te', 'te', 'te', 'te', 'tet=', 'te', '0', '0', '0'),
-(17, 'ana', 'ana', 'aa', 'ana', 'ana', 'ana', '', '', ''),
-(18, 'test2', 'test2', '12', 'test2', 'test2', 'test2', '0', '0', '0'),
-(19, 'perju', 'andrei-cristian', '12', 'djksdjjH', 'ghggh', 'ggggg', '0', '0', '0'),
-(20, 'bb', 'bb', 'bb', 'bb', 'bb', 'b', '0', '0', '0'),
-(21, 'v', 'vv', 'v', 'v', 'v', 'v', '0', '0', '0'),
-(22, 'Banciu', 'Bianca', '12', 'CNGRC', 'Barlad', 'VS', '0', '0', '0'),
-(23, 'Banciu', 'Bianca', '12', 'CNGRC', 'Barlad', 'VS', '4', '5', '6'),
-(24, 'test', 'test', '12', 'test', 'test', 'test', '0', '0', '0');
+INSERT INTO `rezultate` (`cod`, `nume_candidati`, `prenume_candidati`, `clasa_candidati`, `scoala_candidati`, `localitate_candidati`, `judet_candidati`, `proba1`, `proba2`, `proba3`, `cod_materie`) VALUES
+(3, ' Anca', ' Irina', '  12  ', ' BUC', ' DJ', ' DJ ', ' 9', ' 9', ' 9', 3),
+(4, 'Andreaa', 'Aschii', '10', 'BUC', 'BR', 'BR', '6', '6', '6', 3),
+(5, 'xvnbxzbvz', 'vxzvxzv', '22', 'vdx', '4324234', 'fgdfgfd', '4', '4', '4', 4),
+(6, 'bbbbb', 'cccc', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5),
+(9, 'cccc', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3),
+(15, '  cbvbvncsbdjkfjk', ' dbfbdsbkjdsbjbjdfsjbkdfsjk', '10 ', ' vfjcvbdskjJJ', ' hfjdsjkfdsjjkh', ' HVDJJJHD  ', ' 8', ' 8', ' 8', 3),
+(16, 'te', 'te', 'te', 'te', 'tet=', 'te', '0', '0', '0', 4),
+(17, 'ana', 'ana', 'aa', 'ana', 'ana', 'ana', '', '', '', 5),
+(18, 'test2', 'test2', '12', 'test2', 'test2', 'test2', '0', '0', '0', 4),
+(19, 'perju', 'andrei-cristian', '12', 'djksdjjH', 'ghggh', 'ggggg', '0', '0', '0', 3),
+(20, 'bb', 'bb', 'bb', 'bb', 'bb', 'b', '0', '0', '0', 5),
+(21, 'v', 'vv', 'v', 'v', 'v', 'v', '0', '0', '0', 3),
+(22, 'Banciu', 'Bianca', '12', 'CNGRC', 'Barlad', 'VS', '0', '0', '0', 4),
+(23, 'Banciu', 'Bianca', '12', 'CNGRC', 'Barlad', 'VS', '4', '5', '6', 4),
+(24, 'test', 'test', '12', 'test', 'test', 'test', '0', '0', '0', 3);
 
 -- --------------------------------------------------------
 
@@ -205,6 +216,13 @@ INSERT INTO `utilizator` (`cod`, `user`, `pass`, `rol`) VALUES
 --
 -- Indexes for table `candidati`
 --
+
+ALTER TABLE `materie`
+	ADD PRIMARY KEY (`cod_materie`); 
+
+ALTER TABLE `materie`
+  MODIFY `cod_materie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+
 ALTER TABLE `candidati`
   ADD PRIMARY KEY (`cod`);
 
@@ -225,6 +243,10 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `rezultate`
   ADD PRIMARY KEY (`cod`);
+
+ALTER TABLE `rezultate`
+	ADD FOREIGN KEY (`cod_materie`)
+	REFERENCES `materie` (`cod_materie`);
 
 --
 -- Indexes for table `utilizator`
