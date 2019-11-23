@@ -1,17 +1,49 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Login Page</title></head>
-<body background="images.jpg" >
-<br><br><br><br><br><br><center><b><h1>Login Page</h1></b></center><br><br><br><br>
-<form name="login_form" action="login.php" method="post">
-<center>
-<b><i>User:</b></i>
-<input id="user" type="text" name="user" value="" required /><br><br>
-<b><i>Parola:</b></i>
-<input id="parola" type="password" name="pass" value="" required /><br><br>
-<button >Login</button>
-  </center>        
-</body>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+  <style type="text/css">
+    #inputbtn:hover{cursor:pointer;}
+  </style>
+  <body style="background:url('background.jpg'); background-size: 100% auto;">
+    <div class="container-fluid" style="margin-top:60px;margin-bottom:60px;color:#34495E;">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="cardback.jpg" class="card-img-top">
+            <div class="card-body">
+              <center>
+              <h5>Logare elevi / comisie</h5><br>
+              <form class="form-group" method="post" action="login.php">
+                <div class="row">
+                  <div class="col-md-4"><label>Utilizator: </label></div>
+                  <div class="col-md-8"><input type="text" name="utilizator" class="form-control" placeholder="introduceti numele de utilizator" /></div><br><br>
+                  <div class="col-md-4"><label>Parola: </label></div>
+                  <div class="col-md-8"><input type="password" class="form-control" name="parola" placeholder="introduceti parola" /></div><br><br><br>
+                </div>
+				<input type="submit" id="inputbtn" name="login_inapoi" value="Inapoi" class="btn btn-primary">
+                <input type="submit" id="inputbtn" name="login_submit" value="Logare" class="btn btn-primary">
+              </form>
+            </center>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-7"></div>
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </body>
 </html>

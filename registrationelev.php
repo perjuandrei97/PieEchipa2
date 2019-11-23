@@ -35,7 +35,7 @@ try {
     // use exec() because no results are returned
     $conn->exec($sql);
     $conn->exec($query);
-       $conn->exec($rez);
+    $conn->exec($rez);
 
     echo "Autentificare cu succes! Bun venit ".$user_candidati; 
    }
