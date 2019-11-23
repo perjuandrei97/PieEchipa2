@@ -5,9 +5,9 @@
 <h3>Adauga Rezultate</h3>
 </center>
 <?php
- $servername = "remotemysql.com";
-$username = "7YNzXacPRV";
-$password = "9Mx89MjGuI";
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
 $myDB="7YNzXacPRV";
  $nume_candidati=filter_input(INPUT_POST, 'nume_candidati');
 $prenume_candidati=filter_input(INPUT_POST, 'prenume_candidati');

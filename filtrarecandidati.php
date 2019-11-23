@@ -29,9 +29,9 @@
             </thead>
             <tbody>
                 <?php
-                $servername = "remotemysql.com";
-				$username = "7YNzXacPRV";
-				$password = "9Mx89MjGuI";
+				$servername = "127.0.0.1";
+				$username = "root";
+				$password = "";
 				$myDB="7YNzXacPRV";
               $conn = new PDO("mysql:host=$servername;dbname=$myDB", $username, $password);
                 $stmt = $conn->prepare("select cod,nume_candidati,prenume_candidati,clasa_candidati,scoala_candidati,judet_candidati,localitate_candidati from candidati");

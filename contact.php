@@ -12,9 +12,9 @@ $prenume=filter_input(INPUT_POST, 'prenume');
 $telefon=filter_input(INPUT_POST, 'telefon');
 $email=filter_input(INPUT_POST, 'email');
 $mesaj=filter_input(INPUT_POST, 'mesaj');
-$servername = "remotemysql.com";
-$username = "7YNzXacPRV";
-$password = "9Mx89MjGuI";
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
 $myDB="7YNzXacPRV";
 
 try {

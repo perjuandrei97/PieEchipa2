@@ -12,9 +12,9 @@ $telefon_comisie=filter_input(INPUT_POST, 'telefon_comisie');
 $email_comisie=filter_input(INPUT_POST, 'email_comisie');
 $username_comisie=filter_input(INPUT_POST, 'username_comisie');
 $parola_comisie=filter_input(INPUT_POST, 'parola_comisie');
-$servername = "remotemysql.com";
-$username = "7YNzXacPRV";
-$password = "9Mx89MjGuI";
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
 $myDB="7YNzXacPRV";
 
 try {

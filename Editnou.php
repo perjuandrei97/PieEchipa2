@@ -1,6 +1,7 @@
-<?php $servername = "remotemysql.com";
-$username = "7YNzXacPRV";
-$password = "9Mx89MjGuI";
+<?php 
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
 $myDB="7YNzXacPRV";
 $cauta=filter_input(INPUT_POST, 'cauta');
 $cod=filter_input(INPUT_POST, 'cod');

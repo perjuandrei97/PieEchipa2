@@ -17,9 +17,9 @@ $judet_candidati=filter_input(INPUT_POST, 'judet_candidati');
 $localitate_candidati=filter_input(INPUT_POST, 'localitate_candidati');
 $user_candidati=filter_input(INPUT_POST, 'user_candidati');
 $parola_candidati=filter_input(INPUT_POST, 'parola_candidati');
-$servername = "remotemysql.com";
-$username = "7YNzXacPRV";
-$password = "9Mx89MjGuI";
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
 $myDB="7YNzXacPRV";
 
 try {

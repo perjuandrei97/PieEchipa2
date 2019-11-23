@@ -32,11 +32,11 @@
             </thead>
             <tbody>
                 <?php
-                $servername = "remotemysql.com";
-				$username = "7YNzXacPRV";
-				$password = "9Mx89MjGuI";
+				$servername = "127.0.0.1";
+				$username = "root";
+				$password = "";
 				$myDB="7YNzXacPRV";
-              $conn = new PDO("mysql:host=$servername;dbname=$myDB", $username, $password);
+				$conn = new PDO("mysql:host=$servername;dbname=$myDB", $username, $password);
                 $stmt = $conn->prepare("select * from rezultate");
                 $stmt->execute();
                 while($row = $stmt->fetch()){

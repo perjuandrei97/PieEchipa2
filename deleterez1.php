@@ -13,9 +13,9 @@ $clasa_candidati=filter_input(INPUT_POST, 'clasa_candidati');
 $scoala_candidati=filter_input(INPUT_POST, 'scoala_candidati');
 $judet_candidati=filter_input(INPUT_POST, 'judet_candidati');
 $localitate_candidati=filter_input(INPUT_POST, 'localitate_candidati');
-$servername = "remotemysql.com";
-$username = "7YNzXacPRV";
-$password = "9Mx89MjGuI";
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
 $myDB="7YNzXacPRV";
 try {
      $conn = new PDO("mysql:host=$servername;dbname=$myDB", $username, $password);
