@@ -201,29 +201,254 @@ function myFunction() {
 </script>
 
 </div>
-
-<div id="Subiecte" class="tabcontent">
-  <h2>&rarr;Subiecte Juniori</h2>
-  <h3>Clasa a V-a</h3>
-  <li> <p>Olimpiada Matematica  &nbsp;<a href="subiecte5.pdf">click aici<br></a></p></li>
-   <h3>Clasa a VI-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte6.pdf">click aici<br></a></p></li>
-<br>
-<h2>&rarr;Subiecte Seniori</h2>
- <h3>Clasa a VII-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte7.pdf">click aici<br></a></p></li>
- <h3>Clasa a VIII-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte8.pdf">click aici<br></a></p></li>
- <h3>Clasa a IX-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte9.pdf">click aici<br></a></p></li>
- <h3>Clasa a X-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte10.pdf">click aici<br></a></p></li>
- <h3>Clasa a XI-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte11.pdf">click aici<br></a></p></li>
- <h3>Clasa a XII-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte12.pdf">click aici<br></a></p></li>
-
+<div class="container" style="margin-top: 70px">
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-2">
+			<div class="btn-group matematica">
+				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:150px; height:50px; font-size:20px; background-color:#3498DB; border-color:#ffffff;">
+					Matematica
+				</button>
+				<div class="dropdown-menu" style="min-width: 0; padding: 0; margin: 0;">
+						<button type="submit" id="matematica_clasa5" name="matematica_clasa5" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="matematicasubiecte5.pdf">
+							<style type="text/css">
+								#matematica_clasa5:hover{cursor:pointer;}
+							</style>
+							Clasa a 5-a
+							</a>
+						</button>
+						
+						<button type="submit" id="matematica_clasa6" name="matematica_clasa6" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="matematicasubiecte6.pdf">
+							<style type="text/css">
+								#matematica_clasa6:hover{cursor:pointer;}
+							</style>
+							Clasa a 6-a
+							</a>
+						</button>
+						
+						<button type="submit" id="matematica_clasa7" name="matematica_clasa7" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="matematicasubiecte7.pdf">
+							<style type="text/css">
+								#matematica_clasa7:hover{cursor:pointer;}
+							</style>
+							Clasa a 7-a
+							</a>
+						</button>
+					
+						<button type="submit" id="matematica_clasa8" name="matematica_clasa8" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="matematicasubiecte8.pdf">
+							<style type="text/css">
+								#matematica_clasa8:hover{cursor:pointer;}
+							</style>
+							Clasa a 8-a
+							</a>
+						</button>
+						
+						<button type="submit" id="matematica_clasa9" name="matematica_clasa9" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="matematicasubiecte9.pdf">
+							<style type="text/css">
+								#matematica_clasa9:hover{cursor:pointer;}
+							</style>
+							Clasa a 9-a
+							</a>
+						</button>
+						
+						<button type="submit" id="matematica_clasa10" name="matematica_clasa10" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="matematicasubiecte10.pdf">
+							<style type="text/css">
+								#matematica_clasa10:hover{cursor:pointer;}
+							</style>
+							Clasa a 10-a
+							</a>
+						</button>
+						
+						<button type="submit" id="matematica_clasa11" name="matematica_clasa11" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="matematicasubiecte11.pdf">
+							<style type="text/css">
+								#matematica_clasa11:hover{cursor:pointer;}
+							</style>
+							Clasa a 11-a
+							</a>
+						</button>
+						
+						<button type="submit" id="matematica_clasa12" name="matematica_clasa12" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="matematicasubiecte12.pdf">
+							<style type="text/css">
+								#matematica_clasa12:hover{cursor:pointer;}
+							</style>
+							Clasa a 12-a
+							</a>
+						</button>
+				</div>
+			</div>
+			</div>
+			
+			<div class="col-md-2">
+			<div class="btn-group fizica">
+				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:150px; height:50px; font-size:20px; background-color:#3498DB; border-color:#ffffff;">
+					Fizica
+				</button>
+				<div class="dropdown-menu" style="min-width: 0; padding: 0; margin: 0;">
+						<button type="submit" id="fizica_clasa5" name="fizica_clasa5" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="fizicasubiecte5.pdf">
+							<style type="text/css">
+								#fizica_clasa5:hover{cursor:pointer;}
+							</style>
+							Clasa a 5-a
+							</a>
+						</button>
+						
+						<button type="submit" id="fizica_clasa6" name="fizica_clasa6" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="fizicasubiecte6.pdf">
+							<style type="text/css">
+								#fizica_clasa6:hover{cursor:pointer;}
+							</style>
+							Clasa a 6-a
+							</a>
+						</button>
+						
+						<button type="submit" id="fizica_clasa7" name="fizica_clasa7" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="fizicasubiecte7.pdf">
+							<style type="text/css">
+								#fizica_clasa7:hover{cursor:pointer;}
+							</style>
+							Clasa a 7-a
+							</a>
+						</button>
+					
+						<button type="submit" id="fizica_clasa8" name="fizica_clasa8" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="fizicasubiecte8.pdf">
+							<style type="text/css">
+								#fizica_clasa8:hover{cursor:pointer;}
+							</style>
+							Clasa a 8-a
+							</a>
+						</button>
+						
+						<button type="submit" id="fizica_clasa9" name="fizica_clasa9" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="fizicasubiecte9.pdf">
+							<style type="text/css">
+								#fizica_clasa9:hover{cursor:pointer;}
+							</style>
+							Clasa a 9-a
+							</a>
+						</button>
+						
+						<button type="submit" id="fizica_clasa10" name="fizica_clasa10" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="fizicasubiecte10.pdf">
+							<style type="text/css">
+								#fizica_clasa10:hover{cursor:pointer;}
+							</style>
+							Clasa a 10-a
+							</a>
+						</button>
+						
+						<button type="submit" id="fizica_clasa11" name="fizica_clasa11" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="fizicasubiecte11.pdf">
+							<style type="text/css">
+								#fizica_clasa11:hover{cursor:pointer;}
+							</style>
+							Clasa a 11-a
+							</a>
+						</button>
+						
+						<button type="submit" id="fizica_clasa12" name="fizica_clasa12" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="fizicasubiecte12.pdf">
+							<style type="text/css">
+								#fizica_clasa12:hover{cursor:pointer;}
+							</style>
+							Clasa a 12-a
+							</a>
+						</button>
+				</div>
+				</div>
+			</div>
+			
+			<div class="col-md-2">
+			<div class="btn-group geografie">
+				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:150px; height:50px; font-size:20px; background-color:#3498DB; border-color:#ffffff;">
+					Geografie
+				</button>
+				<div class="dropdown-menu" style="min-width: 0; padding: 0; margin: 0;">
+						<button type="submit" id="geografie_clasa5" name="geografie_clasa5" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="geografiesubiecte5.pdf">
+							<style type="text/css">
+								#geografie_clasa5:hover{cursor:pointer;}
+							</style>
+							Clasa a 5-a
+							</a>
+						</button>
+						
+						<button type="submit" id="geografie_clasa6" name="geografie_clasa6" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="geografiesubiecte6.pdf">
+							<style type="text/css">
+								#geografie_clasa6:hover{cursor:pointer;}
+							</style>
+							Clasa a 6-a
+							</a>
+						</button>
+						
+						<button type="submit" id="geografie_clasa7" name="geografie_clasa7" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="geografiesubiecte7.pdf">
+							<style type="text/css">
+								#geografie_clasa7:hover{cursor:pointer;}
+							</style>
+							Clasa a 7-a
+							</a>
+						</button>
+					
+						<button type="submit" id="geografie_clasa8" name="geografie_clasa8" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="geografiesubiecte8.pdf">
+							<style type="text/css">
+								#geografie_clasa8:hover{cursor:pointer;}
+							</style>
+							Clasa a 8-a
+							</a>
+						</button>
+						
+						<button type="submit" id="geografie_clasa9" name="geografie_clasa9" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="geografiesubiecte9.pdf">
+							<style type="text/css">
+								#geografie_clasa9:hover{cursor:pointer;}
+							</style>
+							Clasa a 9-a
+							</a>
+						</button>
+						
+						<button type="submit" id="geografie_clasa10" name="geografie_clasa10" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="geografiesubiecte10.pdf">
+							<style type="text/css">
+								#geografie_clasa10:hover{cursor:pointer;}
+							</style>
+							Clasa a 10-a
+							</a>
+						</button>
+						
+						<button type="submit" id="geografie_clasa11" name="geografie_clasa11" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="geografiesubiecte11.pdf">
+							<style type="text/css">
+								#geografie_clasa11:hover{cursor:pointer;}
+							</style>
+							Clasa a 11-a
+							</a>
+						</button>
+						
+						<button type="submit" id="geografie_clasa12" name="geografie_clasa12" class="list-group-item" style="width:150px; color:#3498DB;">
+							<a href="geografiesubiecte12.pdf">
+							<style type="text/css">
+								#geografie_clasa12:hover{cursor:pointer;}
+							</style>
+							Clasa a 12-a
+							</a>
+						</button>
+				</div>
+				</div>
+			</div>
+			
 </div>  
+</div>
 
 <div id="Rezultate" class="tabcontent">
   <h2>Rezultate</h2>
