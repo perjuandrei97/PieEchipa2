@@ -15,6 +15,7 @@ try {
     $conn = null;
     }
 ?>
+
 <html>
  <head>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -67,7 +68,8 @@ margin: 0;}
   border: 1px solid #ccc;
   background-color: #f1f1f1;
   display: inline-block;
-  margin-left: 36%
+  margin-top: 20px;
+ 
 }
 
 /* Style the buttons inside the tab */
@@ -102,16 +104,24 @@ margin: 0;}
   height:100%;
 
 }
+.list-group-item {
+    position: relative;
+    display: inline;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+
 
 </style>
  </head>
- <body background="onpic1.jpg">
+ <body background="imagini/onpic1.jpg" style="text-align: center">
  
 
  <div class="header">
  <h1><center><i>Olimpiada națională la matematică</i></center></h1>
  </div>
-<div class="tab" style="text-align: center;">
+<div class="tab" style="text-align: center;" align="center">
   <button class="tablinks" onclick="opentab(event, 'Home')">Home</button>
   <button class="tablinks" onclick="opentab(event, 'Candidati')">Candidați</button>
   <button class="tablinks" onclick="opentab(event, 'Subiecte')">Subiecte</button>
@@ -120,16 +130,16 @@ margin: 0;}
 </div>
 
 
-<div id="Home" class="tabcontent">
+<div id="Home" class="tabcontent" style="margin-top: 50px">
 <center> <strong><h2>Organizatori Oficiali</h2></strong>
  <div class="g-heading-v9 text-center g-mb-30">
 							<!--<h2><strong>Organizatori</strong></h2>-->
 							<a class="logo inline">
 								<div class="text-center" style="opacity:.8;">
-									<img src="1.jpg" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="2.png" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="3.jpeg" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="4.jpeg" alt="" style="max-height: 100px; max-width:90%;"></div>	</a></div></center><br><br>
+									<img src="imagini/1.jpg" alt="" style="max-height: 100px; max-width:90%;">
+									<img src="imagini/2.png" alt="" style="max-height: 100px; max-width:90%;">
+									<img src="imagini/3.jpeg" alt="" style="max-height: 100px; max-width:90%;">
+									<img src="imagini/4.jpeg" alt="" style="max-height: 100px; max-width:90%;"></div>	</a></div></center><br><br>
 <div class="row">
 <div class="col-md-2"></div>
 <div class="col-md-8">
@@ -144,7 +154,7 @@ margin: 0;}
 </div>
 </div>
 </center>
-<div id="Candidati" class="tabcontent">
+<div id="Candidati" class="tabcontent" style="margin-top: 50px">
  <h3>Candidați</h3>
   <center>
   
@@ -201,17 +211,19 @@ function myFunction() {
 </script>
 
 </div>
-<div class="container" style="margin-top: 70px">
+
+
+<div id="Subiecte" class="tabcontent">
+<div class="container" style="margin-top: 50px" >
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-2">
-			<div class="btn-group matematica">
-				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:150px; height:50px; font-size:20px; background-color:#3498DB; border-color:#ffffff;">
+			<div class="vertical-menu" style="min-width: 0; padding: 0; margin: 0;">
+				<button type="button" class="btn btn-secondary aria-haspopup="true" aria-expanded="false" style="width:150px; height:50px; font-size:20px; background-color:#3498DB; border-color:#ffffff; min-width: 0; padding: 0; margin: 0;">
 					Matematica
 				</button>
-				<div class="dropdown-menu" style="min-width: 0; padding: 0; margin: 0;">
 						<button type="submit" id="matematica_clasa5" name="matematica_clasa5" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="matematicasubiecte5.pdf">
+							<a href="subiecte/matematica/clasa a 5-a.pdf">
 							<style type="text/css">
 								#matematica_clasa5:hover{cursor:pointer;}
 							</style>
@@ -220,7 +232,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="matematica_clasa6" name="matematica_clasa6" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="matematicasubiecte6.pdf">
+							<a href="subiecte/matematica/clasa a 6-a.pdf">
 							<style type="text/css">
 								#matematica_clasa6:hover{cursor:pointer;}
 							</style>
@@ -229,7 +241,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="matematica_clasa7" name="matematica_clasa7" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="matematicasubiecte7.pdf">
+							<a href="subiecte/matematica/clasa a 7-a.pdf">
 							<style type="text/css">
 								#matematica_clasa7:hover{cursor:pointer;}
 							</style>
@@ -238,7 +250,7 @@ function myFunction() {
 						</button>
 					
 						<button type="submit" id="matematica_clasa8" name="matematica_clasa8" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="matematicasubiecte8.pdf">
+							<a href="subiecte/matematica/clasa a 8-a.pdf">
 							<style type="text/css">
 								#matematica_clasa8:hover{cursor:pointer;}
 							</style>
@@ -247,7 +259,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="matematica_clasa9" name="matematica_clasa9" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="matematicasubiecte9.pdf">
+							<a href="subiecte/matematica/clasa a 9-a.pdf">
 							<style type="text/css">
 								#matematica_clasa9:hover{cursor:pointer;}
 							</style>
@@ -256,7 +268,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="matematica_clasa10" name="matematica_clasa10" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="matematicasubiecte10.pdf">
+							<a href="subiecte/matematica/clasa a 10-a.pdf">
 							<style type="text/css">
 								#matematica_clasa10:hover{cursor:pointer;}
 							</style>
@@ -265,7 +277,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="matematica_clasa11" name="matematica_clasa11" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="matematicasubiecte11.pdf">
+							<a href="subiecte/matematica/clasa a 11-a.pdf">
 							<style type="text/css">
 								#matematica_clasa11:hover{cursor:pointer;}
 							</style>
@@ -274,7 +286,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="matematica_clasa12" name="matematica_clasa12" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="matematicasubiecte12.pdf">
+							<a href="subiecte/matematica/clasa a 12-a.pdf">
 							<style type="text/css">
 								#matematica_clasa12:hover{cursor:pointer;}
 							</style>
@@ -283,16 +295,15 @@ function myFunction() {
 						</button>
 				</div>
 			</div>
-			</div>
+	
 			
 			<div class="col-md-2">
-			<div class="btn-group fizica">
-				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:150px; height:50px; font-size:20px; background-color:#3498DB; border-color:#ffffff;">
+			<div class="vertical-menu" style="min-width: 0; padding: 0; margin: 0;">
+				<button type="button" class="btn btn-secondary aria-haspopup="true" aria-expanded="false" style="width:150px; height:50px; font-size:20px; background-color:#3498DB; border-color:#ffffff; min-width: 0; padding: 0; margin: 0;">
 					Fizica
 				</button>
-				<div class="dropdown-menu" style="min-width: 0; padding: 0; margin: 0;">
 						<button type="submit" id="fizica_clasa5" name="fizica_clasa5" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="fizicasubiecte5.pdf">
+							<a href="subiecte/fizica/clasa a 5-a.pdf">
 							<style type="text/css">
 								#fizica_clasa5:hover{cursor:pointer;}
 							</style>
@@ -301,7 +312,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="fizica_clasa6" name="fizica_clasa6" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="fizicasubiecte6.pdf">
+							<a href="subiecte/fizica/clasa a 6-a.pdf">
 							<style type="text/css">
 								#fizica_clasa6:hover{cursor:pointer;}
 							</style>
@@ -310,7 +321,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="fizica_clasa7" name="fizica_clasa7" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="fizicasubiecte7.pdf">
+							<a href="subiecte/fizica/clasa a 7-a.pdf">
 							<style type="text/css">
 								#fizica_clasa7:hover{cursor:pointer;}
 							</style>
@@ -319,7 +330,7 @@ function myFunction() {
 						</button>
 					
 						<button type="submit" id="fizica_clasa8" name="fizica_clasa8" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="fizicasubiecte8.pdf">
+							<a href="subiecte/fizica/clasa a 8-a.pdf">
 							<style type="text/css">
 								#fizica_clasa8:hover{cursor:pointer;}
 							</style>
@@ -328,7 +339,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="fizica_clasa9" name="fizica_clasa9" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="fizicasubiecte9.pdf">
+							<a href="subiecte/fizica/clasa a 9-a.pdf">
 							<style type="text/css">
 								#fizica_clasa9:hover{cursor:pointer;}
 							</style>
@@ -337,7 +348,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="fizica_clasa10" name="fizica_clasa10" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="fizicasubiecte10.pdf">
+							<a href="subiecte/fizica/clasa a 10-a.pdf">
 							<style type="text/css">
 								#fizica_clasa10:hover{cursor:pointer;}
 							</style>
@@ -346,7 +357,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="fizica_clasa11" name="fizica_clasa11" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="fizicasubiecte11.pdf">
+							<a href="subiecte/fizica/clasa a 11-a.pdf">
 							<style type="text/css">
 								#fizica_clasa11:hover{cursor:pointer;}
 							</style>
@@ -355,7 +366,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="fizica_clasa12" name="fizica_clasa12" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="fizicasubiecte12.pdf">
+							<a href="subiecte/fizica/clasa a 12-a.pdf">
 							<style type="text/css">
 								#fizica_clasa12:hover{cursor:pointer;}
 							</style>
@@ -364,16 +375,14 @@ function myFunction() {
 						</button>
 				</div>
 				</div>
-			</div>
 			
 			<div class="col-md-2">
-			<div class="btn-group geografie">
-				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:150px; height:50px; font-size:20px; background-color:#3498DB; border-color:#ffffff;">
+			<div class="vertical-menu" style="min-width: 0; padding: 0; margin: 0;">
+				<button type="button" class="btn btn-secondary aria-haspopup="true" aria-expanded="false" style="width:150px; height:50px; font-size:20px; background-color:#3498DB; border-color:#ffffff; min-width: 0; padding: 0; margin: 0;">
 					Geografie
 				</button>
-				<div class="dropdown-menu" style="min-width: 0; padding: 0; margin: 0;">
 						<button type="submit" id="geografie_clasa5" name="geografie_clasa5" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="geografiesubiecte5.pdf">
+							<a href="subiecte/geografie/clasa a 5-a.pdf">
 							<style type="text/css">
 								#geografie_clasa5:hover{cursor:pointer;}
 							</style>
@@ -382,7 +391,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="geografie_clasa6" name="geografie_clasa6" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="geografiesubiecte6.pdf">
+							<a href="subiecte/geografie/clasa a 6-a.pdf">
 							<style type="text/css">
 								#geografie_clasa6:hover{cursor:pointer;}
 							</style>
@@ -391,7 +400,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="geografie_clasa7" name="geografie_clasa7" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="geografiesubiecte7.pdf">
+							<a href="subiecte/geografie/clasa a 7-a.pdf">
 							<style type="text/css">
 								#geografie_clasa7:hover{cursor:pointer;}
 							</style>
@@ -400,7 +409,7 @@ function myFunction() {
 						</button>
 					
 						<button type="submit" id="geografie_clasa8" name="geografie_clasa8" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="geografiesubiecte8.pdf">
+							<a href="subiecte/geografie/clasa a 8-a.pdf">
 							<style type="text/css">
 								#geografie_clasa8:hover{cursor:pointer;}
 							</style>
@@ -409,7 +418,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="geografie_clasa9" name="geografie_clasa9" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="geografiesubiecte9.pdf">
+							<a href="subiecte/geografie/clasa a 9-a.pdf">
 							<style type="text/css">
 								#geografie_clasa9:hover{cursor:pointer;}
 							</style>
@@ -418,7 +427,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="geografie_clasa10" name="geografie_clasa10" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="geografiesubiecte10.pdf">
+							<a href="subiecte/geografie/clasa a 10-a.pdf">
 							<style type="text/css">
 								#geografie_clasa10:hover{cursor:pointer;}
 							</style>
@@ -427,7 +436,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="geografie_clasa11" name="geografie_clasa11" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="geografiesubiecte11.pdf">
+							<a href="subiecte/geografie/clasa a 11-a.pdf">
 							<style type="text/css">
 								#geografie_clasa11:hover{cursor:pointer;}
 							</style>
@@ -436,7 +445,7 @@ function myFunction() {
 						</button>
 						
 						<button type="submit" id="geografie_clasa12" name="geografie_clasa12" class="list-group-item" style="width:150px; color:#3498DB;">
-							<a href="geografiesubiecte12.pdf">
+							<a href="subiecte/geografie/clasa a 12-a.pdf">
 							<style type="text/css">
 								#geografie_clasa12:hover{cursor:pointer;}
 							</style>
@@ -444,13 +453,17 @@ function myFunction() {
 							</a>
 						</button>
 				</div>
-				</div>
 			</div>
 			
-</div>  
 </div>
+</div>
+</div>  
 
-<div id="Rezultate" class="tabcontent">
+
+
+
+
+<div id="Rezultate" class="tabcontent" style="margin-top: 50px">
   <h2>Rezultate</h2>
  <table>
   <tr>
@@ -490,20 +503,22 @@ function myFunction() {
 
 </div>
 
-<div id="Contact" class="tabcontent">
+<div id="Contact" class="tabcontent" style="margin-top:50px">
   <h3>Contact</h3>
   <i class="glyphicon glyphicon-earphone g-mr-15"></i>
+<div style="margin-top:50px">
 <li>
   <em>Telefon:</em>
   <strong>074 800 8008</strong><br><br>
-     <li>
+  </div>
+<li>
   <em>Adresa:</em>
   <strong> Strada Domneasca nr 150,Galati,Romania</strong><br><br>
    <li>
     <em>Email:</em>
   <strong>olimpiadanationala@info.com</strong><br><br>
 <a href="contact.html">
-<br><button class="btn-u btn-block rounded" style="background-color:#336E7B; color:#fff; padding:10px;"><i class="glyphicon icon-pencil g-mr-15" style="color:#fff;"></i>Du-te la formularul de contact</button> </a></li>
+<br><button style="background-color:#336E7B; color:#fff; padding:10px; width:300px; height:100px"><i style="color:#fff;"></i>Du-te la formularul de contact</button> </a></li>
   <p></p>
   <div class="g-pl-80 g-pr-80 g-pl-15--xs g-pr-15--xs g-pt-100 g-pb-50 g-dp-table-cell g-va-middle">
 <div class="g-heading-v9 g-mb-30">
