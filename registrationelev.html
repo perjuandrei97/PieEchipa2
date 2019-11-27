@@ -1,35 +1,51 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Inregistare Elev</title></head>
-<body background="imagini/picregistr.jpg" >
-<form name="registration_form" action="registrationelev.php"method="post">
-<center><b><h1>Inregistrare Elev</h1></b></center>
-<br><center>
-<b><i>Nume:</i></b>
-<input type="text" name="nume_candidati" value="" required /><br><br>
-<b><i>Prenume:</i></b>
-<input  type="text" name="prenume_candidati" value="" required /><br><br>
-<b><i>Adresa:</i></b>
-<input type="text" name="adresa_candidati" value=""  required /><br><br>
-<b><i>Telefon:</i></b>
-<input type="phone" class="form-control rounded-right" placeholder="Telefon" name="telephone" pattern="[0-9]{10}" title="Doar cifre" maxlength="10" size="30" required=""><br><br>
-<b><i>Email:</i></b>
-<input type="text" name="email_candidati" value="" required /><br><br>
-<b><i>Clasa:</i></b>
-<input    type="text" name="clasa_candidati" value="" maxlength="2" required /><br><br>
-<b><i>Scoala</i></b>
-<input   type="text" name="scoala_candidati" value="" required/><br><br>
-<b><i>Judet:</i></b>
-<input   type="text" name="judet_candidati" value="" required /><br><br>
-<b><i>Localitate:</i></b>
-<input  type="text" name="localitate_candidati" value="" required /><br><br>
-<b><i>Username:</i></b>
-<input    type="text" name="user_candidati" value="" required /><br><br>
-<b><i>Parola:</i></b>
-<input  type="password" name="parola_candidati" value="" required /><br><br>
-<button class"button">Inregistrare</button>
-
-</center>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body style="background:url('imagini/fundal.jpg'); background-size: 100% auto;">
+<div class="container" style="margin-top:20px">
+<div class="row">
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-body" style="font-size:30px; background-color:#3498DB; color:#ffffff;">
+				<h2>Adauga elev</h2>
+			</div>
+			
+			<div class="card-body">
+				<form class="form-group" action="registrationcomisie.php" method="post">
+					<label>Nume: </label>
+					<input  id="ntext"  type="text" name="nume_candidati" value="" class="form-control" /><br><br>
+					<label>Prenume: </label>
+					<input  id="ptext"  type="text" name="prenume_candidati" value="" class="form-control" /><br><br>
+					<label>Adresa: </label>
+					<input  id="ptext"  type="text" name="adresa_candidati" value="" class="form-control" /><br><br>
+					<label>Telefon: </label>
+					<input  id="ptext"  type="text" name="telephone" value="" class="form-control" pattern="[0-9]{10}" title="Doar cifre" maxlength="10" size="30" required=""/><br><br>
+					<label>Email: </label>
+					<input  id="ptext"  type="text" name="email_candidati" value="" class="form-control" /><br><br>
+					<label>Clasa: </label>
+					<input  id="ntext"  type="text" name="clasa_candidati" value="" class="form-control" /><br><br>
+					<label>Scoala: </label>
+					<input  id="ptext"  type="text" name="scoala_candidati" value="" class="form-control" /><br><br>
+					<label>Judet: </label>
+					<input  id="ptext"  type="text" name="judet_candidati" value="" class="form-control" /><br><br>
+					<label>Localitate: </label>
+					<input  id="ptext"  type="text" name="localitate_candidati" value="" maxlength="10" class="form-control" /><br><br>
+					<label>Utilizator: </label>
+					<input  id="utext"  type="text" name="user_candidati" value="" class="form-control" /><br><br>
+					<label>Parola: </label>
+					<input  id="pp"  type="password" name="parola_candidati" value="" class="form-control" /><br><br>
+					<input type="submit" class="btn btn-primary" name="adauga_elev" value="Adauga elev">
+					<input type="submit" class="btn btn-primary" name="inapoi_elev" value="Inapoi">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</div>	
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 </html>
