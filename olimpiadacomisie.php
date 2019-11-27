@@ -24,7 +24,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       // use exec() because no results are returned
     $sql = "select cod,nume_candidati,prenume_candidati,clasa_candidati,scoala_candidati,judet_candidati,localitate_candidati from candidati";
-    $query="select * from rezultate";
+    $query="select cod, nume_candidati, prenume_candidati, clasa_candidati, scoala_candidati, localitate_candidati, judet_candidati, proba1, proba2, proba3, materie.cod_materie as cod_mat, materie.denumire_materie as den_mat from rezultate, materie where rezultate.cod_materie=materie.cod_materie order by cod_mat, nume_candidati";
     $q="select cod,nume_candidati,prenume_candidati,clasa_candidati,scoala_candidati,judet_candidati,localitate_candidati from candidati where nume_candidati='$cauta'";
 
     }catch(PDOException $e)
@@ -262,6 +262,7 @@ function myFunction() {
      <th>Proba 1</th>
       <th>Proba 2</th>
        <th>Proba 3</th>
+	   <th>Materie</th>
       
  <template slot="table-row" slot-scope="props">
     <span v-if="props.column.field == 'action'">
@@ -286,7 +287,7 @@ function myFunction() {
     							echo "<td>".$row["proba1"]."</td>";
     								echo "<td>".$row["proba2"]."</td>";
     									echo "<td>".$row["proba3"]."</td>";
-    									
+    									echo "<td>".$row["den_mat"]."</td>";
     						
     						echo "</tr>";
       
