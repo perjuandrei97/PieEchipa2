@@ -1,24 +1,71 @@
 <!DOCTYPE HTML>
 <html>
-<head><title>Pagina Contact</title></head>
-<body background="contact.jpg">
-<form name="contact" action="contact.php"method="post">
-<center><b><h1>Pagina de Contact</h1></b></center>
-<br><center>
-<b><i>Subiect:</i></b>
-<input type="text" class="form-control rounded-right" name="subiect" maxlength="45" size="30" required=""><br><br>
-<b><i>Nume:</i></b>
-<input type="text" class="form-control rounded-right" name="nume" maxlength="45" size="30" required=""><br><br>
-<b><i>Prenume:</i></b>
-<input type="text" class="form-control rounded-right" name="prenume" maxlength="45" size="30" required=""><br><br>
-<b><i>Telefon:</i></b>
-<input type="phone" class="form-control rounded-right"  name="telefon" pattern="[0-9]{10}" title="Doar cifre" maxlength="10" size="30" required=""><br><br>
-<b><i>Email:</i></b>
-<input type="email" class="form-control rounded-right"  name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Introduceti o adresa de email valida" maxlength="45" size="30" required=""><br><br>
-<b><i>Mesaj:</i></b><br><br>
-<textarea rows="8" id="message" class="form-control rounded-left rounded-right" name="mesaj" maxlength="1000" cols="40" required=" border-left:none;"></textarea><br><br>
-<button class"button">Trimitrere</button>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	</head>
+	
+	<style>
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+	</style>
+	
+	<body style="background-color:black">
+	<div class="col-md-12" style="margin-top:10px">
+		<a href="OlimpiadaNationala.php">
+			<button class="btn btn-danger">Inapoi</button>
+		</a>
+	</div>
+		<form name="contact" action="contact.php"method="post">
+			<div class="row">
+				<div class="col-md-1 nopadding"></div>
+				<div class="col-md-5 nopadding">
+					<div class="card" style="margin-top:20px; height:800px; background: url(imagini/contact.jpg); background-size: 100% auto; color:white;">
+							<div name="adresa" style="margin-top:220px;">
+								<center><b><em>Adresa</em></b></center>
+								<center><strong> Strada Domneasca nr 150,Galati,Romania</strong><br><br><br></center>
+								<center><b><em>Email</em></b></center>
+								<center><strong>olimpiadanationala@info.com</strong><br><br><br></center>
+								<center><b><em>Telefon</em></b></center>
+								<center><strong>074 800 8008</strong><br><br><br></center>
+							</div>
+					</div>
+				</div>
+			
+				<div class="col-md-5 nopadding">
+					<div class="card" style="margin-top:20px; height:800px">
+						<div class="card-body" >
+							<div name="mesaj" style="margin-top:50px">
+								<center><b><h1>Trimite un mesaj</h1></b></center>
+								<br><center>
+									<div class="row">
+										<div class="col-md-4"><label>Subiect: </label></div>
+										<div class="col-md-8"><input type="text" name="subiect" class="form-control" placeholder="introduceti subiect" maxlength="45" size="30" required=""/></div><br><br><br>
+										<div class="col-md-4"><label>Nume: </label></div>
+										<div class="col-md-8"><input type="text" name="nume" class="form-control" placeholder="introduceti nume" maxlength="45" size="30" required=""/></div><br><br><br>
+										<div class="col-md-4"><label>Prenume: </label></div>
+										<div class="col-md-8"><input type="text" name="prenume" class="form-control" placeholder="introduceti prenume" maxlength="45" size="30" required=""/></div><br><br><br>
+										<div class="col-md-4"><label>Telefon: </label></div>
+										<div class="col-md-8"><input type="text" name="telefon" class="form-control" placeholder="introduceti telefon" pattern="[0-9]{10}" maxlength="10" size="30" required=""/></div><br><br><br>
+										<div class="col-md-4"><label>Email: </label></div>
+										<div class="col-md-8"><input type="text" name="email" class="form-control" placeholder="introduceti email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="45" size="30" required=""/></div><br><br><br>
+										<div class="col-md-4"><label>Mesaj: </label></div>
+										<div class="col-md-8"><textarea rows="8" id="message" name="mesaj" class="form-control rounded-left rounded-right" placeholder="introduceti mesaj" maxlength="1000" cols="40" required=" border-left:none;"></textarea></div><br><br>
+												
+										<div class="col-md-12"><button class="btn btn-primary" style="margin-top:30px;">Trimitere</button></div>
+									</div>
+								</center>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-
-</body>
+	</body>
 </html>

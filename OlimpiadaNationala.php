@@ -45,7 +45,8 @@ function checkTime(i) {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 70%;
+  text-align: center;
 }
 
 td, th {
@@ -126,7 +127,9 @@ margin: 0;}
   <button class="tablinks" onclick="opentab(event, 'Candidati')">Candidați</button>
   <button class="tablinks" onclick="opentab(event, 'Subiecte')">Subiecte</button>
   <button class="tablinks" onclick="opentab(event, 'Rezultate')">Rezultate</button>
+  <a href="contact.html">
   <button class="tablinks" onclick="opentab(event, 'Contact')">Contact</button>
+  </a>
 </div>
 
 
@@ -161,7 +164,7 @@ margin: 0;}
   <div class="center"><input align="center" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cautare participanti ..." title="Selectati un criteriu si cautati">
   <br><br></div>
   </center>
-<table id="myTable">
+<table id="myTable" align="center">
   <tr>
     <th>Cod</th>
     <th>Nume</th>
@@ -465,7 +468,7 @@ function myFunction() {
 
 <div id="Rezultate" class="tabcontent" style="margin-top: 50px">
   <h2>Rezultate</h2>
- <table>
+ <table align="center">
   <tr>
     <th>Cod</th>
     <th>Nume</th>
@@ -501,30 +504,8 @@ function myFunction() {
   ?>
 
 </table>
-
 </div>
 
-<div id="Contact" class="tabcontent" style="margin-top:50px">
-  <h3>Contact</h3>
-  <i class="glyphicon glyphicon-earphone g-mr-15"></i>
-<div style="margin-top:50px">
-<li>
-  <em>Telefon:</em>
-  <strong>074 800 8008</strong><br><br>
-  </div>
-<li>
-  <em>Adresa:</em>
-  <strong> Strada Domneasca nr 150,Galati,Romania</strong><br><br>
-   <li>
-    <em>Email:</em>
-  <strong>olimpiadanationala@info.com</strong><br><br>
-<a href="contact.html">
-<br><button style="background-color:#336E7B; color:#fff; padding:10px; width:300px; height:100px"><i style="color:#fff;"></i>Du-te la formularul de contact</button> </a></li>
-  <p></p>
-  <div class="g-pl-80 g-pr-80 g-pl-15--xs g-pr-15--xs g-pt-100 g-pb-50 g-dp-table-cell g-va-middle">
-<div class="g-heading-v9 g-mb-30">
-
-</div>
 <script>
 function opentab(evt, cityName) {
   var i, tabcontent, tablinks;
