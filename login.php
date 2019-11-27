@@ -35,35 +35,30 @@ if(isset($_POST['login_submit'])){
 */
 if(isset($_POST['login_inapoi'])){
 	header("Location: Welcome.html");
-}
-
-
-try {
-	$user = $_POST['utilizator'];
-    $pass = $_POST['parola'];
-	$conn = new PDO("mysql:host=$servername;dbname=$myDB", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      // use exec() because no results are returned
-    $sql = "select rol from utilizator where user='$user' and pass='$pass'";
-    foreach($conn->query($sql) as $row){
-		$rol = $row['rol'];
-		echo "<p>Autentificare cu succes! Bun venit ".$user." ".$row['rol']."</p>"; 
-		if($rol=="comisie"){
-			header('Location: olimpiadacomisie.php');
+} else {
+	try {
+		$user = $_POST['utilizator'];
+		$pass = $_POST['parola'];
+		$conn = new PDO("mysql:host=$servername;dbname=$myDB", $username, $password);
+		// set the PDO error mode to exception
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		// use exec() because no results are returned
+		$sql = "select rol from utilizator where user='$user' and pass='$pass'";
+		foreach($conn->query($sql) as $row){
+			$rol = $row['rol'];
+			echo "<p>Autentificare cu succes! Bun venit ".$user." ".$row['rol']."</p>"; 
+			if($rol=="comisie"){
+				header('Location: olimpiadacomisie.php');
+			}
+			if($rol=="elev"){
+				header('Location: OlimpiadaNationala.php');
+			}
 		}
-		if($rol=="elev"){
-			header('Location: OlimpiadaNationala.php');
-		}
-   }
-   }
-catch(PDOException $e)
-    {
-    echo $sql . "<br>" . $e->getMessage();
-    $conn = null;
+	} catch(PDOException $e) {
+		echo $sql . "<br>" . $e->getMessage();
+		$conn = null;
     }
- 
-    
+}
 ?>
 
 </body>
