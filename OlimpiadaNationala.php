@@ -139,10 +139,10 @@ margin: 0;}
 							<!--<h2><strong>Organizatori</strong></h2>-->
 							<a class="logo inline">
 								<div class="text-center" style="opacity:.8;">
-									<img src="imagini/1.jpg" alt="" style="max-height: 100px; max-width:90%;">
+									<img src="imagini/1.png" alt="" style="max-height: 100px; max-width:90%;">
 									<img src="imagini/2.png" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="imagini/3.jpeg" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="imagini/4.jpeg" alt="" style="max-height: 100px; max-width:90%;"></div>	</a></div></center><br><br>
+									<img src="imagini/3.png" alt="" style="max-height: 100px; max-width:90%;">
+									<img src="imagini/4.png" alt="" style="max-height: 100px; max-width:90%;"></div>	</a></div></center><br><br>
 <div class="row">
 <div class="col-md-2"></div>
 <div class="col-md-8">
