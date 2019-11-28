@@ -112,111 +112,14 @@ margin: 0;}
     margin-bottom: -1px;
     background-color: #fff;
     border: 1px solid rgba(0,0,0,.125);
-
+}
 
 </style>
- </head>
+
  <body background="imagini/onpic1.jpg" style="text-align: center">
- 
-
- <div class="header">
- <h1><center><i>Olimpiada națională la matematică</i></center></h1>
- </div>
-<div class="tab" style="text-align: center;" align="center">
-  <button class="tablinks" onclick="opentab(event, 'Home')">Home</button>
-  <button class="tablinks" onclick="opentab(event, 'Candidati')">Candidați</button>
-  <button class="tablinks" onclick="opentab(event, 'Subiecte')">Subiecte</button>
-  <button class="tablinks" onclick="opentab(event, 'Rezultate')">Rezultate</button>
-  <a href="contact.html">
-  <button class="tablinks" onclick="opentab(event, 'Contact')">Contact</button>
-  </a>
-</div>
 
 
-<div id="Home" class="tabcontent" style="margin-top: 50px">
-<center> <strong><h2>Organizatori Oficiali</h2></strong>
- <div class="g-heading-v9 text-center g-mb-30">
-							<!--<h2><strong>Organizatori</strong></h2>-->
-							<a class="logo inline">
-								<div class="text-center" style="opacity:.8;">
-									<img src="imagini/1.png" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="imagini/2.png" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="imagini/3.png" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="imagini/4.png" alt="" style="max-height: 100px; max-width:90%;"></div>	</a></div></center><br><br>
-<div class="row">
-<div class="col-md-2"></div>
-<div class="col-md-8">
-<center>
-<h3>Despre Olimpiade</h3>						
-<p>Olimpiadele și concursurile sunt competiții școlare pe discipline de studiu/domenii de pregătire, interdisciplinare și transdisciplinare, care au ca obiectiv general stimularea elevilor cu performanțe școlare înalte sau care au interes și aptitudini deosebite în domeniul științific, tehnico-aplicativ, cultural-artistic, civic şi în cel sportiv. Olimpiadele şi concursurile școlare promovează valorile culturale și etice fundamentale, spiritul de fair-play, competitivitatea și comunicarea interpersonală. Indiferent de domeniul lor sau de premiul oferit, aceste competiţii şcolare stimulează creativitatea şi gândirea critică, oferă motivația atât de necesară în procesul de învățare și ajută la identificarea și dezvoltarea talentelor, abilităților și cunoștințelor, contribuind la dezvoltarea personală și profesională a elevilor. </p>
-<p>Participarea la competițiile școlare este deschisă tuturor elevilor. Fiecare persoană are dreptul să primească o educaţie care dezvoltă abilitățile sale la întregul său potenţial. Garantarea acestui drept implică asigurarea egalităţii de șanse, oferind pentru fiecare persoană ajutor şi resurse în funcție de caracteristicile şi nevoile individuale. Identificarea şi susţinerea copiilor şi tinerilor capabili de performanţe şcolare înalte reprezintă o parte integrantă a politicilor educaţionale promovate de Ministerul Educaţiei.</p>
-<p>Participarea la competițiile școlare este deschisă tuturor elevilor. Fiecare persoană are dreptul să primească o educaţie care dezvoltă abilitățile sale la întregul său potenţial. Garantarea acestui drept implică asigurarea egalităţii de șanse, oferind pentru fiecare persoană ajutor şi resurse în funcție de caracteristicile şi nevoile individuale. Identificarea şi susţinerea copiilor şi tinerilor capabili de performanţe şcolare înalte reprezintă o parte integrantă a politicilor educaţionale promovate de Ministerul Educaţiei.</p>
-<h3>Locatii de concurs</h3>
-<div class="mapouter"><div class="gmap_canvas"><iframe width="848" height="765" id="gmap_canvas" src="https://maps.google.com/maps?q=Romania&t=&z=7&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:765px;width:848px;}.gmap_canvas {overflow:hidden;background:none!important;height:765px;width:848px;}</style></div>
-</div>
-</div>
-</div>
-</center>
-<div id="Candidati" class="tabcontent" style="margin-top: 50px">
- <h3>Candidați</h3>
-  <center>
-  
-  <div class="center"><input align="center" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cautare participanti ..." title="Selectati un criteriu si cautati">
-  <br><br></div>
-  </center>
-<table id="myTable" align="center">
-  <tr>
-    <th>Cod</th>
-    <th>Nume</th>
-    <th>Prenume</th>
-    <th>Clasa</th>
-    <th>Scoala</th>
-    <th>Judet</th>
-    <th>Localitate</th>
-  
-  <?php
-
-    foreach($conn->query($sql) as $row){
-    	echo"<tr>";
-    	echo "<td>".$row["cod"]."</td>";
-    		echo "<td>".$row["nume_candidati"]."</td>";
-    			echo "<td>".$row["prenume_candidati"]."</td>";
-    				echo "<td>".$row["clasa_candidati"]."</td>";
-    					echo "<td>".$row["scoala_candidati"]."</td>";
-    						echo "<td>".$row["judet_candidati"]."</td>";
-    							echo "<td>".$row["localitate_candidati"]."</td>";
-    						echo "</tr>";
-      
-}
-
-  ?>
-
-</table>
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 1; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
-</script>
-
-</div>
-
-
-<div id="Subiecte" class="tabcontent">
+<div name="subiecte">
 <div class="container" style="margin-top: 50px" >
 <div class="row">
 <div class="col-md-3"></div>
@@ -460,69 +363,7 @@ function myFunction() {
 			
 </div>
 </div>
-</div>  
-
-
-
-
-
-<div id="Rezultate" class="tabcontent" style="margin-top: 50px">
-  <h2>Rezultate</h2>
- <table align="center">
-  <tr>
-    <th>Cod</th>
-    <th>Nume</th>
-    <th>Prenume</th>
-    <th>Clasa</th>
-    <th>Scoala</th>
-    <th>Judet</th>
-    <th>Localitate</th>
-     <th>Proba 1</th>
-      <th>Proba 2</th>
-       <th>Proba 3</th>
-	   <th>Materie</th>
-  
-  <?php
-
-    foreach($conn->query($query) as $row){
-    	echo"<tr>";
-    	echo "<td>".$row["cod"]."</td>";
-    		echo "<td>".$row["nume_candidati"]."</td>";
-    			echo "<td>".$row["prenume_candidati"]."</td>";
-    				echo "<td>".$row["clasa_candidati"]."</td>";
-    					echo "<td>".$row["scoala_candidati"]."</td>";
-    						echo "<td>".$row["localitate_candidati"]."</td>";
-    						echo "<td>".$row["judet_candidati"]."</td>";
-    							echo "<td>".$row["proba1"]."</td>";
-    								echo "<td>".$row["proba2"]."</td>";
-    									echo "<td>".$row["proba3"]."</td>";
-										echo "<td>".$row["den_mat"]."</td>";
-    						echo "</tr>";
-      
-}
-
-  ?>
-
-</table>
 </div>
+</body>
+</html> 
 
-<script>
-function opentab(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
- </body>
-</html>

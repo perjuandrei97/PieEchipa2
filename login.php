@@ -34,7 +34,7 @@ if(isset($_POST['login_submit'])){
 }
 */
 if(isset($_POST['login_inapoi'])){
-	header("Location: Welcome.html");
+	header("Location: Welcome.php");
 } else {
 	try {
 		$user = $_POST['utilizator'];

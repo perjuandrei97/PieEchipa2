@@ -30,7 +30,7 @@ if(isset($_POST['adauga_comisie'])){
 }
 
 if(isset($_POST['inapoi_comisie'])){
-	header("Location:RegistrationMenu.html");
+	header("Location:Welcome.php");
 }
 
 /*
