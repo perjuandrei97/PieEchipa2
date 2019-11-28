@@ -22,7 +22,7 @@ if(isset($_POST['adauga_comisie'])){
 	$parola=$_POST['parola_comisie'];
 	$query="insert into comisie(nume_comisie,prenume_comisie,email_comisie,telefon_comisie,username_comisie,parola_comisie,rol_comisie)values('$nume','$prenume','$email','$telefon','$username','$parola','comisie')";
 	$query2="insert into utilizator(user,pass,rol) VALUES('$username','$parola','comisie')";
-	$result=mysqli_query($con,$query);
+	$result=mysqli_execute($con,$query);
 	if($result){ 
 		echo "<script>alert('Comisie adaugata');</script>";
 		echo "<script>window.open('registrationcomisie.html','_self')</script>";
