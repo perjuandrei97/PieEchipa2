@@ -36,26 +36,9 @@ try {
  
 <html>
  <head>
-  <title>Olimpiada nationala la matematica</title>
-&nbsp&nbsp&nbsp<center><body onload="startTime()">
-<div id="txt"></div></center>
-<script>
-function startTime() {
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('txt').innerHTML =
-  h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500);
-}
-function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-  return i;
-}
-</script></head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <body>
+</head>
 
   <meta charset ="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1 ">
@@ -63,7 +46,8 @@ function checkTime(i) {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 70%;
+  text-align: center;
 }
 
 td, th {
@@ -74,6 +58,10 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
 }
 
 body {font-family: Arial;
@@ -121,51 +109,19 @@ margin: 0;}
 
 </style>
  </head>
- <body background="onpic1.jpg">
+ <body>
 
- <div class="header">
- <h1><center><i>Olimpiada națională la matematică</i></center></h1>
- </div>
-<div class="tab">
-  <button class="tablinks" onclick="opentab(event, 'Home')">Home</button>
-  <button class="tablinks" onclick="opentab(event, 'Candidati')">Candidați</button>
-  <button class="tablinks" onclick="opentab(event, 'Subiecte')">Subiecte</button>
-   <button class="tablinks" onclick="opentab(event, 'Rezultate')">Rezultate</button>
-     <button class="tablinks" onclick="opentab(event, 'Contact')">Contact</button>
+ 
 
-</div>
-
-
-<div id="Home" class="tabcontent">
-<center> <strong><h2>Organizatori Oficiali</h2></strong>
- <div class="g-heading-v9 text-center g-mb-30">
-							<!--<h2><strong>Organizatori</strong></h2>-->
-							<a class="logo inline">
-								<div class="text-center" style="opacity:.8;">
-									<img src="1.jpg" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="2.png" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="3.jpeg" alt="" style="max-height: 100px; max-width:90%;">
-									<img src="4.jpeg" alt="" style="max-height: 100px; max-width:90%;"></div>	</a></div></center><br><br>
-<h3>Despre Olimpiade</h3>								
-<p>&nbsp&nbsp&nbsp&nbspOlimpiadele și concursurile sunt competiții școlare pe discipline de studiu/domenii de pregătire, interdisciplinare și transdisciplinare, care au ca obiectiv general stimularea elevilor cu performanțe școlare înalte sau care au interes și aptitudini deosebite în domeniul științific, tehnico-aplicativ, cultural-artistic, civic şi în cel sportiv. Olimpiadele şi concursurile școlare promovează valorile culturale și etice fundamentale, spiritul de fair-play, competitivitatea și comunicarea interpersonală. Indiferent de domeniul lor sau de premiul oferit, aceste competiţii şcolare stimulează creativitatea şi gândirea critică, oferă motivația atât de necesară în procesul de învățare și ajută la identificarea și dezvoltarea talentelor, abilităților și cunoștințelor, contribuind la dezvoltarea personală și profesională a elevilor. </p>
-<p>&nbsp&nbsp&nbsp&nbspParticiparea la competițiile școlare este deschisă tuturor elevilor. Fiecare persoană are dreptul să primească o educaţie care dezvoltă abilitățile sale la întregul său potenţial. Garantarea acestui drept implică asigurarea egalităţii de șanse, oferind pentru fiecare persoană ajutor şi resurse în funcție de caracteristicile şi nevoile individuale. Identificarea şi susţinerea copiilor şi tinerilor capabili de performanţe şcolare înalte reprezintă o parte integrantă a politicilor educaţionale promovate de Ministerul Educaţiei.</p>
-<p>&nbsp&nbsp&nbsp&nbspParticiparea la competițiile școlare este deschisă tuturor elevilor. Fiecare persoană are dreptul să primească o educaţie care dezvoltă abilitățile sale la întregul său potenţial. Garantarea acestui drept implică asigurarea egalităţii de șanse, oferind pentru fiecare persoană ajutor şi resurse în funcție de caracteristicile şi nevoile individuale. Identificarea şi susţinerea copiilor şi tinerilor capabili de performanţe şcolare înalte reprezintă o parte integrantă a politicilor educaţionale promovate de Ministerul Educaţiei.</p>
-<h3>Locatii de concurs</h3>
-					<div class="mapouter"><div class="gmap_canvas"><iframe width="848" height="765" id="gmap_canvas" src="https://maps.google.com/maps?q=Romania&t=&z=7&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:765px;width:848px;}.gmap_canvas {overflow:hidden;background:none!important;height:765px;width:848px;}</style></div>
-</div>
-
-<div id="Candidati" class="tabcontent">
+<div class="container-fluid" style="background-color:black">
+<a href="Login.html">
+	<button class="btn btn-danger" style="margin-top:20px">Delogare</button>
+</a>
+<div id="Candidati">
 <br>
-<h3>Operatii asupra Candidatilor</h3>
-  <li class="col-md-6"><i class="fa fa-circle"></i> <a href="adaugarecandidati.html" style="color:#000000;">Adaugare Candidati</a></li>	</ul><br><br>
-    <li class="col-md-6"><i class="fa fa-circle"></i> <a href="update.php" style="color:#000000;">Modificare Candidati</a></li>	</ul><br><br>
-      <li class="col-md-6"><i class="fa fa-circle"></i> <a href="delete.php" style="color:#000000;">Sterge Candidati</a></li>	</ul><br><br>
-       <li class="col-md-6"><i class="fa fa-circle"></i> <a href="filtrarecandidati.php" style="color:#000000;">Filtrare Candidati</a></li>	</ul><br><br>
-              <li class="col-md-6"><i class="fa fa-circle"></i> <a href="pdf-candidati.php" style="color:#000000;">Export PDF Candidati</a></li>	</ul><br><br>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cauta dupa nume" title="Type in a name">  
+<center>
 <br><br>
-<h3>Vizualizare Candidati</h3>
+<h3 style="color:white">Vizualizare Candidati</h3><br>
 <table id="myTable"> 
   <tr>
     <th>Cod</th>
@@ -194,6 +150,8 @@ margin: 0;}
 
   ?>
 </table>
+<br><br><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cauta dupa nume" style="text-align:center" title="Type in a name"><br><br><br>
+</center>
 <script>
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
@@ -216,41 +174,23 @@ function myFunction() {
 
 </script>
 
-
+<div class="row">
+	<div class="span6" style="float: none; margin: 0 auto;">
+		<button class="btn btn-light"> <a href="adaugarecandidati.html" style="color:#000000;">Adaugare Candidati</a></button>
+		<button class="btn btn-light"> <a href="update.php" style="color:#000000;">Modificare Candidati</a></button>	
+		<button class="btn btn-light"> <a href="delete.php" style="color:#000000;">Sterge Candidati</a></button>	
+		<button class="btn btn-light"> <a href="filtrarecandidati.php" style="color:#000000;">Filtrare Candidati</a></button>	
+		<button class="btn btn-light"> <a href="pdf-candidati.php" style="color:#000000;">Export PDF Candidati</a></button>	
+	</div>
+</div>
+<br><br>
+</div>
 </div>
 
-<div id="Subiecte" class="tabcontent">
-  <h2>&rarr;Subiecte Juniori</h2>
-  <h3>Clasa a V-a</h3>
-  <li> <p>Olimpiada Matematica  &nbsp;<a href="subiecte5.pdf">click aici<br></a></p></li>
-   <h3>Clasa a VI-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte6.pdf">click aici<br></a></p></li>
-<br>
-<h2>&rarr;Subiecte Seniori</h2>
- <h3>Clasa a VII-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte7.pdf">click aici<br></a></p></li>
- <h3>Clasa a VIII-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte8.pdf">click aici<br></a></p></li>
- <h3>Clasa a IX-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte9.pdf">click aici<br></a></p></li>
- <h3>Clasa a X-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte10.pdf">click aici<br></a></p></li>
- <h3>Clasa a XI-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte11.pdf">click aici<br></a></p></li>
- <h3>Clasa a XII-a</h3>
-<li>  <p>Olimpiada Matematica  &nbsp;<a href="subiecte12.pdf">click aici<br></a></p></li>
-
-</div>  
-
-<div id="Rezultate" class="tabcontent"><br>
-<h2>Operatii asupra rezultatelor</h2>
-  <li class="col-md-6"><i class="fa fa-circle"></i> <a href="adaugarerezultate.php" style="color:#000000;">Adaugare Rezultate</a></li>	</ul><br><br>
-  <li class="col-md-6"><i class="fa fa-circle"></i> <a href="edit.php" style="color:#000000;">Modifica Rezultate</a></li>	</ul><br><br>
-  <li class="col-md-6"><i class="fa fa-circle"></i> <a href="deleterez1.php" style="color:#000000;">Sterge Rezultate</a></li>	</ul><br><br>
-    <li class="col-md-6"><i class="fa fa-circle"></i> <a href="filtrarerezultate.php" style="color:#000000;">Filtrare Rezultate</a></li>	</ul><br><br>
-       <li class="col-md-6"><i class="fa fa-circle"></i> <a href="pdf-rezultate.php" style="color:#000000;">Export PDF Rezultate</a></li>	</ul><br><br>
-
-    <h2>Vizualizeaza Rezultate</h2>
+<div class="container-fluid" style="background-color:white">
+<div id="Rezultate"><br><br><br><br>
+	<center>
+    <h3>Vizualizeaza Rezultate</h3><br>
     <table id="myTablee"> 
     <th>Cod</th>
     <th>Nume</th>
@@ -259,10 +199,10 @@ function myFunction() {
     <th>Scoala</th>
     <th>Judet</th>
     <th>Localitate</th>
-     <th>Proba 1</th>
-      <th>Proba 2</th>
-       <th>Proba 3</th>
-	   <th>Materie</th>
+    <th>Proba 1</th>
+    <th>Proba 2</th>
+    <th>Proba 3</th>
+	<th>Materie</th>
       
  <template slot="table-row" slot-scope="props">
     <span v-if="props.column.field == 'action'">
@@ -294,43 +234,26 @@ function myFunction() {
 }
 
   ?>
+</table><br><br><br>
+</center>
 
-</table>
-
+<div class="row">
+	<div class="span6" style="float: none; margin: 0 auto;">
+		<button class="btn btn-dark"> <a href="adaugarerezultate.php" style="color:#ffffff;">Adaugare Rezultate</a></button>
+		<button class="btn btn-dark"> <a href="edit.php" style="color:#ffffff;">Modifica Rezultate</a></button>	
+		<button class="btn btn-dark"> <a href="deleterez1.php" style="color:#ffffff;">Sterge Rezultate</a></button>	
+		<button class="btn btn-dark"> <a href="filtrarerezultate.php" style="color:#ffffff;">Filtrare Rezultate</a></button>	
+		<button class="btn btn-dark"> <a href="pdf-rezultate.php" style="color:#ffffff;">Export PDF Rezultate</a></button>	
+	</div>
+</div>
+<br><br>
+</div>
 </div>
 
-<div id="Contact" class="tabcontent">
-  <h3>Contact</h3>
-  <i class="glyphicon glyphicon-earphone g-mr-15"></i>
-<li>
-  <em>Telefon:</em>
-  <strong>074 800 8008</strong><br><br>
-   <i class="glyphicon glyphicon-earphone g-mr-15"></i>
-   <li>
-  <em>Adresa:</em>
-  <strong> Strada Domneasca nr 150,Galati,Romania</strong><br><br>
-   <li>
-    <em>Email:</em>
-  <strong>olimpiadanationala@info.com</strong><br><br>
-<a href="contact.html">
-<br><button class="btn-u btn-block rounded" style="background-color:#336E7B; color:#fff; padding:10px;"><i class="glyphicon icon-pencil g-mr-15" style="color:#fff;"></i>Du-te la formularul de contact</button> </a></li>
-</div>
-<script>
-function opentab(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
  </body>
 </html>
