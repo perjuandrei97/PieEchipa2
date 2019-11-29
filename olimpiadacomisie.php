@@ -37,7 +37,27 @@ try {
 <html>
  <head>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <body>
+ <center><body onload="startTime()" style="background-color:black">
+<div id="txt" style="color:white"></div></center>
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+
 </head>
 
   <meta charset ="UTF-8">
@@ -115,12 +135,12 @@ margin: 0;}
 
 <div class="container-fluid" style="background-color:black">
 <a href="Login.html">
-	<button class="btn btn-danger" style="margin-top:20px">Delogare</button>
+	<button class="btn btn-danger">Delogare</button>
 </a>
 <div id="Candidati">
 <br>
 <center>
-<br><br>
+<br>
 <h3 style="color:white">Vizualizare Candidati</h3><br>
 <table id="myTable"> 
   <tr>
@@ -152,6 +172,7 @@ margin: 0;}
 </table>
 <br><br><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cauta dupa nume" style="text-align:center" title="Type in a name"><br><br><br>
 </center>
+
 <script>
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
@@ -176,18 +197,28 @@ function myFunction() {
 
 <div class="row">
 	<div class="span6" style="float: none; margin: 0 auto;">
-		<button class="btn btn-light"> <a href="adaugarecandidati.html" style="color:#000000;">Adaugare Candidati</a></button>
-		<button class="btn btn-light"> <a href="update.php" style="color:#000000;">Modificare Candidati</a></button>	
-		<button class="btn btn-light"> <a href="delete.php" style="color:#000000;">Sterge Candidati</a></button>	
-		<button class="btn btn-light"> <a href="filtrarecandidati.php" style="color:#000000;">Filtrare Candidati</a></button>	
-		<button class="btn btn-light"> <a href="pdf-candidati.php" style="color:#000000;">Export PDF Candidati</a></button>	
+		<a href="adaugarecandidati.html" style="color:#000000;">
+			<button class="btn btn-light">Adaugare Candidati</button>
+		</a>
+		<a href="update.php" style="color:#000000;">
+			<button class="btn btn-light">Modificare Candidati</button>	
+		</a>
+		<a href="delete.php" style="color:#000000;">
+			<button class="btn btn-light">Sterge Candidati</button>	
+		</a>
+		<a href="filtrarecandidati.php" style="color:#000000;">
+			<button class="btn btn-light">Filtrare Candidati</button>	
+		</a>
+		<a href="pdf-candidati.php" style="color:#000000;">
+			<button class="btn btn-light">Export PDF Candidati</button>	
+		</a>
 	</div>
 </div>
 <br><br>
 </div>
 </div>
 
-<div class="container-fluid" style="background-color:white">
+<div id="div2" class="container-fluid" style="background-color:white">
 <div id="Rezultate"><br><br><br><br>
 	<center>
     <h3>Vizualizeaza Rezultate</h3><br>
@@ -239,11 +270,21 @@ function myFunction() {
 
 <div class="row">
 	<div class="span6" style="float: none; margin: 0 auto;">
-		<button class="btn btn-dark"> <a href="adaugarerezultate.php" style="color:#ffffff;">Adaugare Rezultate</a></button>
-		<button class="btn btn-dark"> <a href="edit.php" style="color:#ffffff;">Modifica Rezultate</a></button>	
-		<button class="btn btn-dark"> <a href="deleterez1.php" style="color:#ffffff;">Sterge Rezultate</a></button>	
-		<button class="btn btn-dark"> <a href="filtrarerezultate.php" style="color:#ffffff;">Filtrare Rezultate</a></button>	
-		<button class="btn btn-dark"> <a href="pdf-rezultate.php" style="color:#ffffff;">Export PDF Rezultate</a></button>	
+		<a href="adaugarerezultate.php" style="color:#ffffff;">
+			<button class="btn btn-dark">Adaugare Rezultate</button>
+		</a>
+		<a href="edit.php" style="color:#ffffff;">
+			<button class="btn btn-dark">Modifica Rezultate</button>	
+		</a>
+		<a href="deleterez1.php" style="color:#ffffff;">
+			<button class="btn btn-dark">Sterge Rezultate</button>	
+		</a>
+		<a href="filtrarerezultate.php" style="color:#ffffff;">
+			<button class="btn btn-dark">Filtrare Rezultate</button>	
+		</a>
+		<a href="pdf-rezultate.php" style="color:#ffffff;">
+			<button class="btn btn-dark">Export PDF Rezultate</button>	
+		</a>
 	</div>
 </div>
 <br><br>
