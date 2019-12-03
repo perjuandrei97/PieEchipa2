@@ -15,7 +15,7 @@ $username = "root";
 $password = "";
 $myDB="7YNzXacPRV";
 
-/*
+
 $con=mysqli_connect($servername,$username,$password,$myDB);
 
 if(isset($_POST['login_submit'])){
@@ -29,11 +29,11 @@ if(isset($_POST['login_submit'])){
 	}
 	else {
 		echo "<script>alert('Nume sau parola gresita!')</script>";
-	    echo "<script>window.open('login.html','_self')</script>";
+	    echo "<script>window.open('test.php','_self')</script>";
 }
 }
-*/
-if(isset($_POST['login_inapoi'])){
+
+/* if(isset($_POST['login_inapoi'])){
 	header("Location: Welcome.php");
 } else {
 	try {
@@ -58,7 +58,7 @@ if(isset($_POST['login_inapoi'])){
 		echo $sql . "<br>" . $e->getMessage();
 		$conn = null;
     }
-}
+} */
 ?>
 
 </body>

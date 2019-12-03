@@ -27,17 +27,17 @@ try {
 
     <title>Olimpiada Nationala</title>
 
-    <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
+
     <link rel="stylesheet" href="style2.css">
-    <!-- Scrollbar Custom CSS -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
-    <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 </head>
 
 <body>
@@ -84,13 +84,203 @@ try {
 			</div>
 
 			<div id="Candidati" class="tabcontent">
-			  <h3>Paris</h3>
-			  <p>Paris is the capital of France.</p> 
+				<center>
+					<h3>Candidați</h3><br>
+					<div class="center"><input align="center" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cautare participanti ..." title="Selectati un criteriu si cautati"><br><br></div>
+				</center>
+				<table id="myTable" align="center">
+					<tr>
+						<th>Cod</th>
+						<th>Nume</th>
+						<th>Prenume</th>
+						<th>Clasa</th>
+						<th>Scoala</th>
+						<th>Judet</th>
+						<th>Localitate</th>
+					</tr>
+					<?php
+						foreach($conn->query($sql) as $row){
+							echo"<tr>";
+							echo "<td>".$row["cod"]."</td>";
+							echo "<td>".$row["nume_candidati"]."</td>";
+							echo "<td>".$row["prenume_candidati"]."</td>";
+							echo "<td>".$row["clasa_candidati"]."</td>";
+							echo "<td>".$row["scoala_candidati"]."</td>";
+							echo "<td>".$row["judet_candidati"]."</td>";
+							echo "<td>".$row["localitate_candidati"]."</td>";
+							echo "</tr>";
+						}
+					?>
+				</table>
+				<script>
+				function myFunction() {
+				  var input, filter, table, tr, td, i, txtValue;
+				  input = document.getElementById("myInput");
+				  filter = input.value.toUpperCase();
+				  table = document.getElementById("myTable");
+				  tr = table.getElementsByTagName("tr");
+				  for (i = 1; i < tr.length; i++) {
+					td = tr[i].getElementsByTagName("td")[1];
+					if (td) {
+					  txtValue = td.textContent || td.innerText;
+					  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					  } else {
+						tr[i].style.display = "none";
+					  }
+					}       
+				  }
+				}
+				</script>
 			</div>
 
 			<div id="Subiecte" class="tabcontent">
 			  <h3>Tokyo</h3>
 			  <p>Tokyo is the capital of Japan.</p>
+			</div>
+			
+			<div id="Rezultate" class="tabcontent">
+				<center>
+					<h3>Rezultate</h3>
+				</center>
+				<br>
+				<table align="center">
+					<tr>
+						<th>Cod</th>
+						<th>Nume</th>
+						<th>Prenume</th>
+						<th>Clasa</th>
+						<th>Scoala</th>
+						<th>Judet</th>
+						<th>Localitate</th>
+						<th>Proba 1</th>
+						<th>Proba 2</th>
+						<th>Proba 3</th>
+						<th>Materie</th>
+					</tr>
+					<?php
+						foreach($conn->query($query) as $row){
+							echo"<tr>";
+							echo "<td>".$row["cod"]."</td>";
+							echo "<td>".$row["nume_candidati"]."</td>";
+							echo "<td>".$row["prenume_candidati"]."</td>";
+							echo "<td>".$row["clasa_candidati"]."</td>";
+							echo "<td>".$row["scoala_candidati"]."</td>";
+    						echo "<td>".$row["localitate_candidati"]."</td>";
+    						echo "<td>".$row["judet_candidati"]."</td>";
+    						echo "<td>".$row["proba1"]."</td>";
+    						echo "<td>".$row["proba2"]."</td>";
+    						echo "<td>".$row["proba3"]."</td>";
+							echo "<td>".$row["den_mat"]."</td>";
+    						echo "</tr>";
+						}
+					?>
+				</table>
+			</div>
+			
+			<div id="Contact" class="tabcontent">
+				<div class="row">
+					<div class="col-md-7">
+						<div name="mesaj">
+							<center><b><h4>Trimite un mesaj</h4></b></center><br>
+							<center>
+								<div class="row">
+									<div class="col-md-4"><label>Subiect: </label></div>
+									<div class="col-md-8"><input type="text" name="subiect" class="form-control" placeholder="introduceti subiect" maxlength="35" size="20" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Nume: </label></div>
+									<div class="col-md-8"><input type="text" name="nume" class="form-control" placeholder="introduceti nume" maxlength="45" size="30" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Prenume: </label></div>
+									<div class="col-md-8"><input type="text" name="prenume" class="form-control" placeholder="introduceti prenume" maxlength="45" size="30" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Telefon: </label></div>
+									<div class="col-md-8"><input type="text" name="telefon" class="form-control" placeholder="introduceti telefon" pattern="[0-9]{10}" maxlength="10" size="30" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Email: </label></div>
+									<div class="col-md-8"><input type="text" name="email" class="form-control" placeholder="introduceti email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="45" size="30" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Mesaj: </label></div>
+									<div class="col-md-8"><textarea rows="6" id="message" name="mesaj" class="form-control rounded-left rounded-right" placeholder="introduceti mesaj" maxlength="1000" cols="40" required=" border-left:none;"></textarea></div><br><br>
+								
+									<div class="col-md-12"><button class="btn btn-primary" style="margin-top:30px;">Trimitere</button></div>
+								</div>
+							</center>
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div name="contact">
+							<center><b><h4>Adresa de contact</h4></b></center><br>
+							<h4>Bucuresti</h4>
+							<h6><a href="https://goo.gl/maps/QAtm3PEiqtnJrU6t9" target="_blank">Splaiul Unirii 165, clădirea Timpuri Noi Square 2, etaj 1, București, România (apasa pentru a vedea in Google Maps)</a></h6>
+							<h6>Telefon: +40 762 944 822</h6>
+							<h6>Email: contact@olimpiadanationala.ro</h6><br>
+							<h4>Galati</h4>
+							<h6><a href="https://goo.gl/maps/pojq5u8uP2jkePQh7" target="_blank">Strada Morilor 137, Galati, România (apasa pentru a vedea in Google Maps)</a></h6>
+							<h6>Telefon: +40 748 008 008</h6>
+							<h6>Email: contact@olimpiadanationala.ro</h6><br>
+							<h4>Social media</h4>
+							<a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+							<a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+							<a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+							<a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="Autentificare" class="tabcontent">
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<div class="form-control rounded-left rounded-right"; style="border: 1px solid #dddddd; margin-top:120px; height:350px; background: #fafafa";>
+							<br><center><b><h4>Logare</h4></b></center><br>
+							<center>
+								<form class="form-group" method="post" action="login.php">
+									<div class="row">
+										<div class="col-md-2"></div>
+										<div class="col-md-2"><label>Username: </label></div>
+										<div class="col-md-6"><input type="text" name="username_login" class="form-control" placeholder="introduceti nume de utilizator" maxlength="35" size="20" required=""/></div><br><br><br>
+										<div class="col-md-2"></div>
+										<div class="col-md-2"></div>
+										<div class="col-md-2"><label>Parola: </label></div>
+										<div class="col-md-6"><input type="password" name="parola_login" class="form-control" placeholder="introduceti parola" maxlength="45" size="30" required=""/></div><br><br><br>
+										<div class="col-md-2"></div>
+										
+										<div class="col-md-12"><button class="btn btn-primary" name="login_submit" id="inputbtn" type="submit" style="margin-top:10px;">Logare</button></div>
+									</div>
+								</form>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="Inregistrare" class="tabcontent">
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<div name="formular" action="registrationcomisie.php" method="post">
+							<h6>ATENTIE! Doar cadrele didactice care fac parte din comisie isi pot crea un cont.</h6><br>
+							<center><b><h4>Creeaza un cont nou</h4></b></center><br>
+							<center>
+								<div class="row">
+									<div class="col-md-4"><label>Nume: </label></div>
+									<div class="col-md-8"><input type="text" name="nume_comisie" class="form-control" placeholder="introduceti nume" maxlength="45" size="30" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Prenume: </label></div>
+									<div class="col-md-8"><input type="text" name="prenume_comisie" class="form-control" placeholder="introduceti prenume" maxlength="45" size="30" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Email: </label></div>
+									<div class="col-md-8"><input type="text" name="email_comisie" class="form-control" placeholder="introduceti email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="45" size="30" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Telefon: </label></div>
+									<div class="col-md-8"><input type="text" name="telefon_comisie" class="form-control" placeholder="introduceti telefon" pattern="[0-9]{10}" maxlength="10" size="30" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Utilizator: </label></div>
+									<div class="col-md-8"><input type="text" name="username_comisie" class="form-control" placeholder="introduceti nume de utilizator" maxlength="45" size="30" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Parola: </label></div>
+									<div class="col-md-8"><input type="password" name="parola_comisie" class="form-control" placeholder="introduceti parola" maxlength="45" size="30" required=""/></div><br><br><br>
+									<div class="col-md-4"><label>Invitatie: </label></div>
+									<div class="col-md-8"><input type="text" name="invitatie_comisie" class="form-control" placeholder="introduceti invitatia" maxlength="45" size="30" required=""/></div><br><br><br>
+										
+									<div class="col-md-12"><button class="btn btn-primary" style="margin-top:30px;">Inregistrare</button></div>
+								</div>
+							</center>
+						</div>
+					</div>
+				</div>
 			</div>
         </div>
     </div>
