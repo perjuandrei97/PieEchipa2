@@ -34,7 +34,6 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
@@ -52,8 +51,16 @@ try {
             <div class="tab">
 				<button class="tablinks" onclick="openCity(event, 'Acasa')" id="defaultOpen">Acasa</button>
 				<button class="tablinks" onclick="openCity(event, 'Candidati')">Candidati</button>
+				<button class="tablinks" onclick="openCity(event, 'Candidati_adaugare')" style="font-size: 14px; margin-left:10px;">Adaugare Candidati</button>
+				<button class="tablinks" onclick="openCity(event, 'Candidati_stergere')" style="font-size: 14px; margin-left:10px;">Stergere Candidati</button>
+				<button class="tablinks" onclick="openCity(event, 'Candidati_modificare')" style="font-size: 14px; margin-left:10px;">Modificare Candidati</button>
+				<button class="tablinks" onclick="openCity(event, 'Candidati_export')" style="font-size: 14px; margin-left:10px;">Export Candidati</button>
 				<button class="tablinks" onclick="openCity(event, 'Subiecte')">Subiecte</button>
 				<button class="tablinks" onclick="openCity(event, 'Rezultate')">Rezultate</button>
+				<button class="tablinks" onclick="openCity(event, 'Rezultate_adaugare')" style="font-size: 14px; margin-left:10px;">Adaugare Rezultate</button>
+				<button class="tablinks" onclick="openCity(event, 'Rezultate_stergere')" style="font-size: 14px; margin-left:10px;">Stergere Rezultate</button>
+				<button class="tablinks" onclick="openCity(event, 'Rezultate_modificare')" style="font-size: 14px; margin-left:10px;">Modificare Rezultate</button>
+				<button class="tablinks" onclick="openCity(event, 'Rezultate_export')" style="font-size: 14px; margin-left:10px;">Export Rezultate</button>
 				<button class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
 				<button class="tablinks" onclick="openCity(event, 'Autentificare')">Autentificare</button>
 				<button class="tablinks" onclick="openCity(event, 'Inregistrare')">Inregistrare</button>
@@ -135,8 +142,216 @@ try {
 			</div>
 
 			<div id="Subiecte" class="tabcontent">
-			  <h3>Tokyo</h3>
-			  <p>Tokyo is the capital of Japan.</p>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<div name="subiecte" style="margin-top:100px">
+							<div class="row">
+								<div class="col-md-4">
+									<center><h3>Matematica</h3></center>
+									<br><br>
+									<center>
+										<h5>Gimnaziu</h5>
+										<br>
+										<a href="subiecte/matematica/clasa a 5-a.pdf">
+											<style type="text/css">
+												#matematica_clasa5:hover{cursor:pointer;}
+											</style>
+											Clasa a 5-a
+										</a>
+										<br>
+										<a href="subiecte/matematica/clasa a 6-a.pdf">
+											<style type="text/css">
+												#matematica_clasa6:hover{cursor:pointer;}
+											</style>
+											Clasa a 6-a
+										</a>
+										<br>
+										<a href="subiecte/matematica/clasa a 7-a.pdf">
+											<style type="text/css">
+												#matematica_clasa7:hover{cursor:pointer;}
+											</style>
+											Clasa a 7-a
+										</a>
+										<br>
+										<a href="subiecte/matematica/clasa a 8-a.pdf">
+											<style type="text/css">
+												#matematica_clasa8:hover{cursor:pointer;}
+											</style>
+											Clasa a 8-a
+										</a>
+										<br><br><br>
+										
+										<h5>Liceu</h5>
+										<br>
+										<a href="subiecte/matematica/clasa a 9-a.pdf">
+											<style type="text/css">
+												#matematica_clasa9:hover{cursor:pointer;}
+											</style>
+											Clasa a 9-a
+										</a>
+										<br>
+										<a href="subiecte/matematica/clasa a 10-a.pdf">
+											<style type="text/css">
+												#matematica_clasa10:hover{cursor:pointer;}
+											</style>
+											Clasa a 10-a
+										</a>
+										<br>
+										<a href="subiecte/matematica/clasa a 11-a.pdf">
+											<style type="text/css">
+												#matematica_clasa11:hover{cursor:pointer;}
+											</style>
+											Clasa a 11-a
+										</a>
+										<br>
+										<a href="subiecte/matematica/clasa a 12-a.pdf">
+											<style type="text/css">
+												#matematica_clasa12:hover{cursor:pointer;}
+											</style>
+											Clasa a 12-a
+										</a>
+									</center>
+								</div>
+								
+								<div class="col-md-4">
+									<center><h3>Fizica</h3></center>
+									<br><br>
+									<center>
+										<h5>Gimnaziu</h5>
+										<br>
+										<a href="subiecte/fizica/clasa a 5-a.pdf">
+											<style type="text/css">
+												#fizica_clasa5:hover{cursor:pointer;}
+											</style>
+											Clasa a 5-a
+										</a>
+										<br>
+										<a href="subiecte/fizica/clasa a 6-a.pdf">
+											<style type="text/css">
+												#fizica_clasa6:hover{cursor:pointer;}
+											</style>
+											Clasa a 6-a
+										</a>
+										<br>
+										<a href="subiecte/fizica/clasa a 7-a.pdf">
+											<style type="text/css">
+												#fizica_clasa7:hover{cursor:pointer;}
+											</style>
+											Clasa a 7-a
+										</a>
+										<br>
+										<a href="subiecte/fizica/clasa a 8-a.pdf">
+											<style type="text/css">
+												#fizica_clasa8:hover{cursor:pointer;}
+											</style>
+											Clasa a 8-a
+										</a>
+										<br><br><br>
+										
+										<h5>Liceu</h5>
+										<br>
+										<a href="subiecte/fizica/clasa a 9-a.pdf">
+											<style type="text/css">
+												#fizica_clasa9:hover{cursor:pointer;}
+											</style>
+											Clasa a 9-a
+										</a>
+										<br>
+										<a href="subiecte/fizica/clasa a 10-a.pdf">
+											<style type="text/css">
+												#fizica_clasa10:hover{cursor:pointer;}
+											</style>
+											Clasa a 10-a
+										</a>
+										<br>
+										<a href="subiecte/fizica/clasa a 11-a.pdf">
+											<style type="text/css">
+												#fizica_clasa11:hover{cursor:pointer;}
+											</style>
+											Clasa a 11-a
+										</a>
+										<br>
+										<a href="subiecte/fizica/clasa a 12-a.pdf">
+											<style type="text/css">
+												#fizica_clasa12:hover{cursor:pointer;}
+											</style>
+											Clasa a 12-a
+										</a>
+									</center>
+								</div>
+								
+								<div class="col-md-4">
+									<center><h3>Geografie</h3></center>
+									<br><br>
+									<center>
+										<h5>Gimnaziu</h5>
+										<br>
+										<a href="subiecte/geografie/clasa a 5-a.pdf">
+											<style type="text/css">
+												#geografie_clasa5:hover{cursor:pointer;}
+											</style>
+											Clasa a 5-a
+										</a>
+										<br>
+										<a href="subiecte/geografie/clasa a 6-a.pdf">
+											<style type="text/css">
+												#geografie_clasa6:hover{cursor:pointer;}
+											</style>
+											Clasa a 6-a
+										</a>
+										<br>
+										<a href="subiecte/geografie/clasa a 7-a.pdf">
+											<style type="text/css">
+												#geografie_clasa7:hover{cursor:pointer;}
+											</style>
+											Clasa a 7-a
+										</a>
+										<br>
+										<a href="subiecte/geografie/clasa a 8-a.pdf">
+											<style type="text/css">
+												#geografie_clasa8:hover{cursor:pointer;}
+											</style>
+											Clasa a 8-a
+										</a>
+										<br><br><br>
+										
+										<h5>Liceu</h5>
+										<br>
+										<a href="subiecte/geografie/clasa a 9-a.pdf">
+											<style type="text/css">
+												#geografie_clasa9:hover{cursor:pointer;}
+											</style>
+											Clasa a 9-a
+										</a>
+										<br>
+										<a href="subiecte/geografie/clasa a 10-a.pdf">
+											<style type="text/css">
+												#geografie_clasa10:hover{cursor:pointer;}
+											</style>
+											Clasa a 10-a
+										</a>
+										<br>
+										<a href="subiecte/geografie/clasa a 11-a.pdf">
+											<style type="text/css">
+												#geografie_clasa11:hover{cursor:pointer;}
+											</style>
+											Clasa a 11-a
+										</a>
+										<br>
+										<a href="subiecte/geografie/clasa a 12-a.pdf">
+											<style type="text/css">
+												#geografie_clasa12:hover{cursor:pointer;}
+											</style>
+											Clasa a 12-a
+										</a>
+									</center>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
 			</div>
 			
 			<div id="Rezultate" class="tabcontent">
