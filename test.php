@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
-<?php $servername = "127.0.0.1";
+<?php 
+session_start();
+$servername = "127.0.0.1";
 $username = "root";
 $password = "";
 $myDB="7YNzXacPRV";
@@ -51,16 +53,32 @@ try {
             <div class="tab">
 				<button class="tablinks" onclick="openCity(event, 'Acasa')" id="defaultOpen">Acasa</button>
 				<button class="tablinks" onclick="openCity(event, 'Candidati')">Candidati</button>
+				<?php
+				if(isset($_SESSION['loggedIN'])) {
+					if($_SESSION['loggedIN']=="true") {
+				?>
 				<button class="tablinks" onclick="openCity(event, 'Candidati_adaugare')" style="font-size: 14px; margin-left:10px;">Adaugare Candidati</button>
 				<button class="tablinks" onclick="openCity(event, 'Candidati_stergere')" style="font-size: 14px; margin-left:10px;">Stergere Candidati</button>
 				<button class="tablinks" onclick="openCity(event, 'Candidati_modificare')" style="font-size: 14px; margin-left:10px;">Modificare Candidati</button>
 				<button class="tablinks" onclick="openCity(event, 'Candidati_export')" style="font-size: 14px; margin-left:10px;">Export Candidati</button>
+				<?php
+					}
+				}
+				?>
 				<button class="tablinks" onclick="openCity(event, 'Subiecte')">Subiecte</button>
 				<button class="tablinks" onclick="openCity(event, 'Rezultate')">Rezultate</button>
+				<?php
+				if(isset($_SESSION['loggedIN'])) {
+					if($_SESSION['loggedIN']=="true") {
+				?>
 				<button class="tablinks" onclick="openCity(event, 'Rezultate_adaugare')" style="font-size: 14px; margin-left:10px;">Adaugare Rezultate</button>
 				<button class="tablinks" onclick="openCity(event, 'Rezultate_stergere')" style="font-size: 14px; margin-left:10px;">Stergere Rezultate</button>
 				<button class="tablinks" onclick="openCity(event, 'Rezultate_modificare')" style="font-size: 14px; margin-left:10px;">Modificare Rezultate</button>
 				<button class="tablinks" onclick="openCity(event, 'Rezultate_export')" style="font-size: 14px; margin-left:10px;">Export Rezultate</button>
+				<?php
+					}
+				}
+				?>
 				<button class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
 				<button class="tablinks" onclick="openCity(event, 'Autentificare')">Autentificare</button>
 				<button class="tablinks" onclick="openCity(event, 'Inregistrare')">Inregistrare</button>

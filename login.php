@@ -4,6 +4,7 @@
 <body>
 
 <?php
+session_start();
 //oezp48vf
 //tb129
 //10.13.11.6
@@ -19,13 +20,14 @@ $myDB="7YNzXacPRV";
 $con=mysqli_connect($servername,$username,$password,$myDB);
 
 if(isset($_POST['login_submit'])){
-	$username=$_POST['utilizator'];
-	$password=$_POST['parola'];
+	$username=$_POST['username_login'];
+	$password=$_POST['parola_login'];
 	$query="select * from utilizator where user='$username' and pass='$password';";
 	$result=mysqli_query($con,$query);
-	if(mysqli_num_rows($result)==1)
+	if(mysqli_num_rows($result)!=0)
 	{
-		header("Location:OlimpiadaNationala.php");
+		$_SESSION['loggedIN']="true";
+		header("Location:test.php");
 	}
 	else {
 		echo "<script>alert('Nume sau parola gresita!')</script>";
