@@ -80,8 +80,27 @@ try {
 				}
 				?>
 				<button class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
+				<?php
+				if(isset($_SESSION['loggedIN'])) {
+					if($_SESSION['loggedIN']=="false") {
+				?>
 				<button class="tablinks" onclick="openCity(event, 'Autentificare')">Autentificare</button>
 				<button class="tablinks" onclick="openCity(event, 'Inregistrare')">Inregistrare</button>
+				<?php
+					}
+				}
+				?>
+				<?php
+				if(isset($_SESSION['loggedIN'])) {
+					if($_SESSION['loggedIN']=="true") {
+				?>
+				<a href="logout.php">
+					<button class="tablinks">Delogare</button>
+				</a>
+				<?php
+					}
+				}
+				?>
 			</div>
 
         </nav>
@@ -489,7 +508,7 @@ try {
 					<div class="col-md-3"></div>
 					<div class="col-md-6">
 						<div name="formular" action="registrationcomisie.php" method="post">
-							<h6>ATENTIE! Doar cadrele didactice care fac parte din comisie isi pot crea un cont.</h6><br>
+							<center><h6>ATENTIE! Doar cadrele didactice care fac parte din comisie isi pot crea un cont.</h6><br></center>
 							<center><b><h4>Creeaza un cont nou</h4></b></center><br>
 							<center>
 								<div class="row">
