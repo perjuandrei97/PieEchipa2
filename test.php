@@ -2,6 +2,9 @@
 
 <?php 
 session_start();
+if(!isset($_SESSION['loggedIN'])) {
+	$_SESSION['loggedIN']="false";
+}
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
@@ -54,7 +57,6 @@ try {
 				<button class="tablinks" onclick="openCity(event, 'Acasa')" id="defaultOpen">Acasa</button>
 				<button class="tablinks" onclick="openCity(event, 'Candidati')">Candidati</button>
 				<?php
-				if(isset($_SESSION['loggedIN'])) {
 					if($_SESSION['loggedIN']=="true") {
 				?>
 				<button class="tablinks" onclick="openCity(event, 'Candidati_adaugare')" style="font-size: 14px; margin-left:10px;">Adaugare Candidati</button>
@@ -63,12 +65,10 @@ try {
 				<button class="tablinks" onclick="openCity(event, 'Candidati_export')" style="font-size: 14px; margin-left:10px;">Export Candidati</button>
 				<?php
 					}
-				}
 				?>
 				<button class="tablinks" onclick="openCity(event, 'Subiecte')">Subiecte</button>
 				<button class="tablinks" onclick="openCity(event, 'Rezultate')">Rezultate</button>
 				<?php
-				if(isset($_SESSION['loggedIN'])) {
 					if($_SESSION['loggedIN']=="true") {
 				?>
 				<button class="tablinks" onclick="openCity(event, 'Rezultate_adaugare')" style="font-size: 14px; margin-left:10px;">Adaugare Rezultate</button>
@@ -77,21 +77,17 @@ try {
 				<button class="tablinks" onclick="openCity(event, 'Rezultate_export')" style="font-size: 14px; margin-left:10px;">Export Rezultate</button>
 				<?php
 					}
-				}
 				?>
 				<button class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
 				<?php
-				if(isset($_SESSION['loggedIN'])) {
 					if($_SESSION['loggedIN']=="false") {
 				?>
 				<button class="tablinks" onclick="openCity(event, 'Autentificare')">Autentificare</button>
 				<button class="tablinks" onclick="openCity(event, 'Inregistrare')">Inregistrare</button>
 				<?php
 					}
-				}
 				?>
 				<?php
-				if(isset($_SESSION['loggedIN'])) {
 					if($_SESSION['loggedIN']=="true") {
 				?>
 				<a href="logout.php">
@@ -99,7 +95,6 @@ try {
 				</a>
 				<?php
 					}
-				}
 				?>
 			</div>
 
