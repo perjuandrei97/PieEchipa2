@@ -26,13 +26,11 @@ try {
    $conn->query($sql);
    $conn->query($query);
    $conn->query($rez);
-    header('Location:olimpiadacomisie.php');
+    header('Location:test.php');
     }catch(PDOException $e)
     {
-    echo $sql . "<br>" . $e->getMessage();
-     echo $query . "<br>" . $e->getMessage();
-   echo $rez . "<br>" . $e->getMessage();
-    $conn = null;
+		header('Location:test.php');
+		$conn = null;
     }
 ?>
 

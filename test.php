@@ -172,6 +172,85 @@ try {
 				}
 				</script>
 			</div>
+			
+			<div id="Candidati_adaugare" class="tabcontent">
+				<form action="adaugarecandidati.php" method="post">
+					<center>
+						<br><h3>Adaugare Candidati</h3><br>
+						<div name="cand" style="width:300px">
+							<b style="float:left">Nume:</b>
+							<input type="text" style="float:right" name="nume_candidati" value=""  size="20" required /><br><br>
+						</div>
+						<div name="cand" style="width:300px">
+							<b style="float:left">Prenume:</b>
+							<input  type="text" style="float:right" name="prenume_candidati" value="" size="20" required /><br><br>
+						</div>
+						<div name="cand" style="width:300px">
+							<b style="float:left">Adresa:</b>
+							<input type="text" style="float:right" name="adresa_candidati" value=""  size="20" required /><br><br>
+						</div>
+						<div name="cand" style="width:300px">
+							<b style="float:left">Telefon:</b>
+							<input type="text" style="float:right"  name="telefon_candidati"  value="" maxlength="10" size="20" required=""><br><br>
+						</div>
+						<div name="cand" style="width:300px">
+							<b style="float:left">Email:</b>
+							<input type="text" style="float:right" name="email_candidati" value=""  size="20" required /><br><br>
+						</div>
+						<div name="cand" style="width:300px">
+							<b style="float:left">Clasa:</b>
+							<input type="text" style="float:right" name="clasa_candidati" value="" maxlength="2" size="20" required /><br><br>
+						</div>
+						<div name="cand" style="width:300px">
+							<b style="float:left">Scoala:</b>
+							<input type="text" style="float:right" name="scoala_candidati" value=""  size="20" required/><br><br>
+						</div>
+						<div name="cand" style="width:300px">
+							<b style="float:left">Judet:</b>
+							<input type="text" style="float:right" name="judet_candidati" value="" size="20" required /><br><br>
+						</div>
+						<div name="cand" style="width:300px">
+							<b style="float:left">Localitate:</b>
+							<input type="text" style="float:right" name="localitate_candidati" value=""  size="20" required /><br><br>
+						</div>
+						<button class="btn btn-primary" style="margin-top:30px;" type="submit">Adaugare</button>
+					</center>
+				</form>
+			</div>
+			
+			<div id="Candidati_stergere" class="tabcontent">
+				<form action="delete.php" method="post">
+					<table>
+						<tr>
+							<th>Cod</th>
+							<th>Nume</th>
+							<th>Prenume</th>
+							<th>Clasa</th>
+							<th>Scoala</th>
+							<th>Judet</th>
+							<th>Localitate</th>
+							<th>Sterge</th>
+						</tr>
+						
+						<?php
+							foreach($conn->query($sql) as $row){
+								echo"<tr>";
+								echo "<form action=delete1.php method=post>";
+								echo "<td><input type=text name=cod value='".$row['cod']."'s</td>";
+								echo "<td><input type=text name=nume_candidati value=' ".$row['nume_candidati']."'></td>";
+								echo "<td><input type=text name=prenume_candidati value=' ".$row['prenume_candidati']."'></td>";
+								echo "<td><input type=text name=clasa_candidati value=' ".$row['clasa_candidati']." '></td>";
+								echo "<td><input type=text name=scoala_candidati value=  ' ".$row['scoala_candidati']."'></td>";
+    		        			echo "<td><input type=text name=judet_candidati value=' ".$row['judet_candidati']." '></td>";
+    		        			echo "<td><input type=text name=localitate_candidati value= ' ".$row['localitate_candidati']."'></td>";
+    		            		echo "<td><input type=submit name='Sterge' value='Sterge'>";
+    			                echo "</form>";
+    			                echo "</tr>";
+							}
+						?>
+					</table>
+				</form>
+			</div>
 
 			<div id="Subiecte" class="tabcontent">
 				<div class="row">

@@ -34,36 +34,7 @@ $conn->query($sql);
     }else{echo "nu s-a sters".$conn->error;}
     
 ?>
-<table>
-<tr>
-    <th>Cod</th>
-    <th>Nume</th>
-    <th>Prenume</th>
-    <th>Clasa</th>
-    <th>Scoala</th>
-    <th>Judet</th>
-    <th>Localitate</th>
-    <th>Sterge</th>
-  <?php
 
-    foreach($conn->query($sql) as $row){
-    	echo"<tr>";
-    	   	echo "<form action=delete1.php method=post>";
-    	    	echo "<td><input type=text name=cod value='".$row['cod']."'s</td>";
-             		echo "<td><input type=text name=nume_candidati value=' ".$row['nume_candidati']."'></td>";
-    	        		echo "<td><input type=text name=prenume_candidati value=' ".$row['prenume_candidati']."'></td>";
-    	        			echo "<td><input type=text name=clasa_candidati value=' ".$row['clasa_candidati']." '></td>";
-    		        			echo "<td><input type=text name=scoala_candidati value=  ' ".$row['scoala_candidati']."'></td>";
-    		        				echo "<td><input type=text name=judet_candidati value=' ".$row['judet_candidati']." '></td>";
-    		        					echo "<td><input type=text name=localitate_candidati value= ' ".$row['localitate_candidati']."'></td>";
-    		            					echo "<td><input type=submit name='Sterge' value='Sterge'>";
-    			                				echo "</form>";
-    			                        			echo "</tr>";
-
-}
-
-  ?>
-</table>
 </center>
 </body>
 </html>
