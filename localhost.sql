@@ -69,27 +69,18 @@ CREATE TABLE `comisie` (
   `email_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `telefon_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `username_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `parola_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `rol_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL
+  `parola_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `comisie`
 --
 
-INSERT INTO `comisie` (`cod`, `nume_comisie`, `prenume_comisie`, `email_comisie`, `telefon_comisie`, `username_comisie`, `parola_comisie`, `rol_comisie`) VALUES
-(1, 'comisie1', 'comisie', '0321374628', 'comisie@yahoo.com', '', 'comisie', NULL),
-(2, 'abc', 'abc', '3674329841', 'abc@yahoo.com', '', 'abc', NULL),
-(3, 'n1', 'n2', '0746752184', 'n1@yahoo.com', 'comisie1', 'com', 'comisie'),
-(4, 'n1', 'n1', '1335678765', 'n1', 'n1nn', 'ndenndn', 'comisie'),
-(5, 'njisdo', 'jdifsj', '3842397429', 'hfodfs', 'fgsakdjfhbkasdj', 'bkvdskvjds', 'comisie'),
-(9, 'abad', 'badb', 'fjsdknfk', 'bdakjd', ' ksjfs', 'jfskfe', 'comisie'),
-(10, 'abs', 'abd', 'adada', 'abd', 'abdab', 'abkdj', 'comisie'),
-(11, 'anca', 'anca', 'anca', 'anca', 'anca', 'anca', 'comisie'),
-(12, 'comisie2', 'comisie2', '0986547834', 'com@yahoo.com', 'comisie2', 'comisie2', 'comisie'),
-(13, 'cm1', 'cm1', '8343274329', 'cm1', 'cm1', 'cm1', 'comisie'),
-(14, 'comm', 'comm', '2174028147', 'comm', 'comm', 'comm', 'comisie'),
-(15, 'cc', 'cc', '3487239573', 'cc', 'cc', 'cc', 'comisie');
+INSERT INTO `comisie` (`cod`, `nume_comisie`, `prenume_comisie`, `telefon_comisie`, `email_comisie`, `username_comisie`, `parola_comisie`) VALUES
+(12, 'comisie2', 'comisie2', '0986547834', 'com@yahoo.com', 'comisie2', 'comisie2'),
+(13, 'cm1', 'cm1', '8343274329', 'cm1', 'cm1', 'cm1'),
+(14, 'comm', 'comm', '2174028147', 'comm', 'comm', 'comm'),
+(15, 'cc', 'cc', '3487239573', 'cc', 'cc', 'cc');
 
 -- --------------------------------------------------------
 
@@ -200,14 +191,11 @@ CREATE TABLE `utilizator` (
 -- Dumping data for table `utilizator`
 --
 
-INSERT INTO `utilizator` (`cod`, `user`, `pass`, `rol`) VALUES
-(1, 'andrei', 'andrei', 'elev'),
-(2, 'bianca', 'bianca', 'elev'),
-(61, 'b', 'b', 'elev'),
-(62, 'v', 'v', 'elev'),
-(63, 'bianca', 'bianca', 'elev'),
-(64, 'test', 'test', 'elev'),
-(65, 'cc', 'cc', 'comisie');
+INSERT INTO `utilizator` (`cod`, `user`, `pass`) VALUES
+(62, 'cm1', 'cm1'),
+(63, 'comm', 'comm'),
+(64, 'comisie2', 'comisie2'),
+(65, 'cc', 'cc');
 
 --
 -- Indexes for dumped tables

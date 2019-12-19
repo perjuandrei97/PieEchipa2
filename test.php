@@ -581,7 +581,7 @@ try {
 				<div class="row">
 					<div class="col-md-3"></div>
 					<div class="col-md-6">
-						<div name="formular" action="registrationcomisie.php" method="post">
+						<form name="formular" action="registrationcomisie.php" method="post">
 							<center><h6>ATENTIE! Doar cadrele didactice care fac parte din comisie isi pot crea un cont.</h6><br></center>
 							<center><b><h4>Creeaza un cont nou</h4></b></center><br>
 							<center>
@@ -601,7 +601,7 @@ try {
 									<div class="col-md-4"><label>Invitatie: </label></div>
 									<div class="col-md-8"><input type="text" name="invitatie_comisie" class="form-control" placeholder="introduceti invitatia" maxlength="45" size="30" required=""/></div><br><br><br>
 										
-									<div class="col-md-12"><button class="btn btn-primary" style="margin-top:30px;">Inregistrare</button></div>
+									<div class="col-md-12"><button class="btn btn-primary" name="regist_submit" id="inputbtn" type="submit" style="margin-top:10px;">Inregistrare</button></div>
 								</div>
 							</center>
 						</div>

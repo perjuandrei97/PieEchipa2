@@ -13,24 +13,25 @@ $myDB="7YNzXacPRV";
 
 $con=mysqli_connect($servername,$username,$password,$myDB);
 
-if(isset($_POST['adauga_comisie'])){
+if(isset($_POST['regist_submit'])){
 	$nume=$_POST['nume_comisie'];
 	$prenume=$_POST['prenume_comisie'];
 	$email=$_POST['email_comisie'];
 	$telefon=$_POST['telefon_comisie'];
 	$username=$_POST['username_comisie'];
 	$parola=$_POST['parola_comisie'];
-	$query="insert into comisie(nume_comisie,prenume_comisie,email_comisie,telefon_comisie,username_comisie,parola_comisie,rol_comisie)values('$nume','$prenume','$email','$telefon','$username','$parola','comisie')";
-	$query2="insert into utilizator(user,pass,rol) VALUES('$username','$parola','comisie')";
-	$result=mysqli_execute($con,$query);
-	if($result){ 
+	$query="insert into comisie(nume_comisie,prenume_comisie,email_comisie,telefon_comisie,username_comisie,parola_comisie)values('$nume','$prenume','$email','$telefon','$username','$parola')";
+	$query2="insert into utilizator(user,pass) VALUES('$username','$parola')";
+	$result=mysqli_query($con,$query);
+	$result2=mysqli_query($con, $query2);
+	if($result && $result2){ 
 		echo "<script>alert('Comisie adaugata');</script>";
-		echo "<script>window.open('registrationcomisie.html','_self')</script>";
+		echo "<script>window.open('test.php', '_self')</script>";
 	} 
 }
 
 if(isset($_POST['inapoi_comisie'])){
-	header("Location:Welcome.php");
+	header("Location: test.php");
 }
 
 /*
