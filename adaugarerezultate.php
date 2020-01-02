@@ -1,15 +1,11 @@
 <html>
-<title>Adauga Rezultate</title>
-<body background="modrez.jpg">
-<center>
-<h3>Adauga Rezultate</h3>
-</center>
+<body>
 <?php
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
 $myDB="7YNzXacPRV";
- $nume_candidati=filter_input(INPUT_POST, 'nume_candidati');
+$nume_candidati=filter_input(INPUT_POST, 'nume_candidati');
 $prenume_candidati=filter_input(INPUT_POST, 'prenume_candidati');
 $clasa_candidati=filter_input(INPUT_POST, 'clasa_candidati');
 $scoala_candidati=filter_input(INPUT_POST, 'scoala_candidati');
@@ -32,43 +28,5 @@ $conn->query($sql);
     $conn = null;
     }
 ?>
-<table>
-<tr>
-    <th>Cod</th>
-    <th>Nume</th>
-    <th>Prenume</th>
-    <th>Clasa</th>
-    <th>Scoala</th>
-    <th>Localitate</th>
-    <th>Judet</th>
-   <th>Proba1</th>
-  <th>Proba2</th>
-    <th>Proba3</th>  
-    <th>Adauga</th>
-      <?php
-foreach($conn->query($sql) as $row){
-        	echo"<tr>";
-        	echo "<form action=arezultate1.php method=post>";
-    	    	echo "<td><input type=text name=cod value='".$row['cod']."'></td>";
-             		echo "<td><input type=text name=nume_candidati value='".$row['nume_candidati']."'></td>";
-    	        		echo "<td><input type=text name=prenume_candidati value='".$row['prenume_candidati']."'></td>";
-    	        			echo "<td><input type=text name=clasa_candidati value='".$row['clasa_candidati']."'> </td>";
-    		        			echo "<td><input type=text name=scoala_candidati value='".$row['scoala_candidati']."'></td>";
-    		        			    echo "<td><input type=text name=localitate_candidati value='".$row['localitate_candidati']."'></td>";
-    		        			    	echo "<td><input type=text name=judet_candidati value='".$row['judet_candidati']."'></td>";
-    		        					    echo "<td><input type=text name=proba1 value='".$row['proba1']."'></td>";
-    		        					         echo "<td><input type=text name=proba2 value='".$row['proba2']."'></td>";
-    		        					            echo "<td><input type=text name=proba3 value='".$row['proba3']."'></td>";
-    		        					               echo "<td><input type=submit name='Adauga' value='Adauga'>";
-    		        	
-    			   
-    			                        			echo "</tr>";
-
-}
-
-  ?>
-</table>
-
-</table>
 </body>
 </html>

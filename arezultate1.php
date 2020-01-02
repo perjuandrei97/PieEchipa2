@@ -1,4 +1,4 @@
-  <?php
+<?php
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
@@ -28,13 +28,13 @@ $proba1=filter_input(INPUT_POST, 'proba1');
 $proba2=filter_input(INPUT_POST, 'proba2');
 $proba3=filter_input(INPUT_POST, 'proba3');
 $q="SELECT nume_candidati,prenume_candidati ,clasa_candidati ,scoala_candidati ,judet_candidati ,localitate_candidati,proba1,proba2,proba3 FROM candidati";
-  $sql = "INSERT INTO rezultate(nume_candidati,prenume_candidati,clasa_candidati,scoala_candidati,judet_candidati,localitate_candidati,proba1,proba2,proba3)
+$sql = "INSERT INTO rezultate(nume_candidati,prenume_candidati,clasa_candidati,scoala_candidati,judet_candidati,localitate_candidati,proba1,proba2,proba3)
     VALUES ('$nume_candidati','$prenume_candidati','$clasa_candidati','$scoala_candidati','$judet_candidati','$localitate_candidati','$proba1','$proba2','$proba3')";
   
 echo $sql;
 
 $conn->exec($sql);
- header('Location:olimpiadacomisie.php');
+ header('Location:test.php');
 
   }else{
       echo"eroare";}

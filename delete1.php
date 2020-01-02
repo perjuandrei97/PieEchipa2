@@ -29,7 +29,7 @@ $proba3=filter_input(INPUT_POST, 'proba3');
   
 echo $sql;
 $conn->exec($sql);
-   header('Location:olimpiadacomisie.php');
+   header('Location:test.php');
 
   }else{
       echo"eroare";}

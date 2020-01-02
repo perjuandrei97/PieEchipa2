@@ -62,7 +62,9 @@ try {
 				<button class="tablinks" onclick="openCity(event, 'Candidati_adaugare')" style="font-size: 14px; margin-left:10px;">Adaugare Candidati</button>
 				<button class="tablinks" onclick="openCity(event, 'Candidati_stergere')" style="font-size: 14px; margin-left:10px;">Stergere Candidati</button>
 				<button class="tablinks" onclick="openCity(event, 'Candidati_modificare')" style="font-size: 14px; margin-left:10px;">Modificare Candidati</button>
-				<button class="tablinks" onclick="openCity(event, 'Candidati_export')" style="font-size: 14px; margin-left:10px;">Export Candidati</button>
+				<a href="pdf-candidati.php" target="_blank">
+					<button class="tablinks" style="font-size: 14px; margin-left:10px;">Export Candidati</button>
+				</a>
 				<?php
 					}
 				?>
@@ -74,14 +76,17 @@ try {
 				<button class="tablinks" onclick="openCity(event, 'Rezultate_adaugare')" style="font-size: 14px; margin-left:10px;">Adaugare Rezultate</button>
 				<button class="tablinks" onclick="openCity(event, 'Rezultate_stergere')" style="font-size: 14px; margin-left:10px;">Stergere Rezultate</button>
 				<button class="tablinks" onclick="openCity(event, 'Rezultate_modificare')" style="font-size: 14px; margin-left:10px;">Modificare Rezultate</button>
-				<button class="tablinks" onclick="openCity(event, 'Rezultate_export')" style="font-size: 14px; margin-left:10px;">Export Rezultate</button>
+				<a href="pdf-rezultate.php" target="_blank">
+					<button class="tablinks" style="font-size: 14px; margin-left:10px;">Export Rezultate</button>
+				</a>
 				<?php
 					}
 				?>
-				<button class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
 				<?php
 					if($_SESSION['loggedIN']=="false") {
 				?>
+				<button class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
+				<button class="tablinks" onclick="openCity(event, 'Intrebari')">Intrebari frecvente</button>
 				<button class="tablinks" onclick="openCity(event, 'Autentificare')">Autentificare</button>
 				<button class="tablinks" onclick="openCity(event, 'Inregistrare')">Inregistrare</button>
 				<?php
@@ -220,7 +225,8 @@ try {
 			
 			<div id="Candidati_stergere" class="tabcontent">
 				<form action="delete.php" method="post">
-					<table>
+					<center><br><h3>Stergere Candidati</h3><br></center>
+					<table id="tabel_stergere_candidati" align="center">
 						<tr>
 							<th>Cod</th>
 							<th>Nume</th>
@@ -236,13 +242,13 @@ try {
 							foreach($conn->query($sql) as $row){
 								echo"<tr>";
 								echo "<form action=delete1.php method=post>";
-								echo "<td><input type=text name=cod value='".$row['cod']."'s</td>";
-								echo "<td><input type=text name=nume_candidati value=' ".$row['nume_candidati']."'></td>";
-								echo "<td><input type=text name=prenume_candidati value=' ".$row['prenume_candidati']."'></td>";
-								echo "<td><input type=text name=clasa_candidati value=' ".$row['clasa_candidati']." '></td>";
-								echo "<td><input type=text name=scoala_candidati value=  ' ".$row['scoala_candidati']."'></td>";
-    		        			echo "<td><input type=text name=judet_candidati value=' ".$row['judet_candidati']." '></td>";
-    		        			echo "<td><input type=text name=localitate_candidati value= ' ".$row['localitate_candidati']."'></td>";
+								echo "<td><input type=text style=width:90px name=cod value='".$row['cod']."'s</td>";
+								echo "<td><input type=text style=width:113px name=nume_candidati value=' ".$row['nume_candidati']."'></td>";
+								echo "<td><input type=text style=width:154px name=prenume_candidati value=' ".$row['prenume_candidati']."'></td>";
+								echo "<td><input type=text style=width:110px name=clasa_candidati value=' ".$row['clasa_candidati']." '></td>";
+								echo "<td><input type=text style=width:149px name=scoala_candidati value=  ' ".$row['scoala_candidati']."'></td>";
+    		        			echo "<td><input type=text style=width:150px name=judet_candidati value=' ".$row['judet_candidati']." '></td>";
+    		        			echo "<td><input type=text style=width:166px name=localitate_candidati value= ' ".$row['localitate_candidati']."'></td>";
     		            		echo "<td><input type=submit name='Sterge' value='Sterge'>";
     			                echo "</form>";
     			                echo "</tr>";
@@ -251,6 +257,42 @@ try {
 					</table>
 				</form>
 			</div>
+			
+			<div id="Candidati_modificare" class="tabcontent">
+				<form action="update.php" method="post">
+					<center><br><h3>Modificare Candidati</h3><br></center>
+					<table id="tabel_modificare_candidati" align="center">
+						<tr>
+							<th>Cod</th>
+							<th>Nume</th>
+							<th>Prenume</th>
+							<th>Clasa</th>
+							<th>Scoala</th>
+							<th>Judet</th>
+							<th>Localitate</th>
+							<th>Sterge</th>
+						</tr>
+						
+						<?php
+							foreach($conn->query($sql) as $row){
+								echo"<tr>";
+								echo "<form action=update1.php method=post>";
+								echo "<td><input type=text style=width:90px name=cod value='".$row['cod']."'s</td>";
+								echo "<td><input type=text style=width:113px name=nume_candidati value=' ".$row['nume_candidati']."'></td>";
+								echo "<td><input type=text style=width:154px name=prenume_candidati value=' ".$row['prenume_candidati']."'></td>";
+								echo "<td><input type=text style=width:110px name=clasa_candidati value=' ".$row['clasa_candidati']." '></td>";
+								echo "<td><input type=text style=width:149px name=scoala_candidati value=  ' ".$row['scoala_candidati']."'></td>";
+    		        			echo "<td><input type=text style=width:150px name=judet_candidati value=' ".$row['judet_candidati']." '></td>";
+    		        			echo "<td><input type=text style=width:166px name=localitate_candidati value= ' ".$row['localitate_candidati']."'></td>";
+    		            		echo "<td><input type=submit name='Modifica' value='Modifica'>";
+    			                echo "</form>";
+    			                echo "</tr>";
+							}
+						?>
+					</table>
+				</form>
+			</div>
+
 
 			<div id="Subiecte" class="tabcontent">
 				<div class="row">
@@ -264,28 +306,28 @@ try {
 									<center>
 										<h5>Gimnaziu</h5>
 										<br>
-										<a href="subiecte/matematica/clasa a 5-a.pdf">
+										<a href="subiecte/matematica/clasa a 5-a.pdf" target="_blank">
 											<style type="text/css">
 												#matematica_clasa5:hover{cursor:pointer;}
 											</style>
 											Clasa a 5-a
 										</a>
 										<br>
-										<a href="subiecte/matematica/clasa a 6-a.pdf">
+										<a href="subiecte/matematica/clasa a 6-a.pdf" target="_blank">
 											<style type="text/css">
 												#matematica_clasa6:hover{cursor:pointer;}
 											</style>
 											Clasa a 6-a
 										</a>
 										<br>
-										<a href="subiecte/matematica/clasa a 7-a.pdf">
+										<a href="subiecte/matematica/clasa a 7-a.pdf" target="_blank">
 											<style type="text/css">
 												#matematica_clasa7:hover{cursor:pointer;}
 											</style>
 											Clasa a 7-a
 										</a>
 										<br>
-										<a href="subiecte/matematica/clasa a 8-a.pdf">
+										<a href="subiecte/matematica/clasa a 8-a.pdf" target="_blank">
 											<style type="text/css">
 												#matematica_clasa8:hover{cursor:pointer;}
 											</style>
@@ -295,28 +337,28 @@ try {
 										
 										<h5>Liceu</h5>
 										<br>
-										<a href="subiecte/matematica/clasa a 9-a.pdf">
+										<a href="subiecte/matematica/clasa a 9-a.pdf" target="_blank">
 											<style type="text/css">
 												#matematica_clasa9:hover{cursor:pointer;}
 											</style>
 											Clasa a 9-a
 										</a>
 										<br>
-										<a href="subiecte/matematica/clasa a 10-a.pdf">
+										<a href="subiecte/matematica/clasa a 10-a.pdf" target="_blank">
 											<style type="text/css">
 												#matematica_clasa10:hover{cursor:pointer;}
 											</style>
 											Clasa a 10-a
 										</a>
 										<br>
-										<a href="subiecte/matematica/clasa a 11-a.pdf">
+										<a href="subiecte/matematica/clasa a 11-a.pdf" target="_blank">
 											<style type="text/css">
 												#matematica_clasa11:hover{cursor:pointer;}
 											</style>
 											Clasa a 11-a
 										</a>
 										<br>
-										<a href="subiecte/matematica/clasa a 12-a.pdf">
+										<a href="subiecte/matematica/clasa a 12-a.pdf" target="_blank">
 											<style type="text/css">
 												#matematica_clasa12:hover{cursor:pointer;}
 											</style>
@@ -331,28 +373,26 @@ try {
 									<center>
 										<h5>Gimnaziu</h5>
 										<br>
-										<a href="subiecte/fizica/clasa a 5-a.pdf">
 											<style type="text/css">
 												#fizica_clasa5:hover{cursor:pointer;}
 											</style>
-											Clasa a 5-a
-										</a>
+											-
 										<br>
-										<a href="subiecte/fizica/clasa a 6-a.pdf">
+										<a href="subiecte/fizica/clasa a 6-a.pdf" target="_blank">
 											<style type="text/css">
 												#fizica_clasa6:hover{cursor:pointer;}
 											</style>
 											Clasa a 6-a
 										</a>
 										<br>
-										<a href="subiecte/fizica/clasa a 7-a.pdf">
+										<a href="subiecte/fizica/clasa a 7-a.pdf" target="_blank">
 											<style type="text/css">
 												#fizica_clasa7:hover{cursor:pointer;}
 											</style>
 											Clasa a 7-a
 										</a>
 										<br>
-										<a href="subiecte/fizica/clasa a 8-a.pdf">
+										<a href="subiecte/fizica/clasa a 8-a.pdf" target="_blank">
 											<style type="text/css">
 												#fizica_clasa8:hover{cursor:pointer;}
 											</style>
@@ -362,28 +402,28 @@ try {
 										
 										<h5>Liceu</h5>
 										<br>
-										<a href="subiecte/fizica/clasa a 9-a.pdf">
+										<a href="subiecte/fizica/clasa a 9-a.pdf" target="_blank">
 											<style type="text/css">
 												#fizica_clasa9:hover{cursor:pointer;}
 											</style>
 											Clasa a 9-a
 										</a>
 										<br>
-										<a href="subiecte/fizica/clasa a 10-a.pdf">
+										<a href="subiecte/fizica/clasa a 10-a.pdf" target="_blank">
 											<style type="text/css">
 												#fizica_clasa10:hover{cursor:pointer;}
 											</style>
 											Clasa a 10-a
 										</a>
 										<br>
-										<a href="subiecte/fizica/clasa a 11-a.pdf">
+										<a href="subiecte/fizica/clasa a 11-a.pdf" target="_blank">
 											<style type="text/css">
 												#fizica_clasa11:hover{cursor:pointer;}
 											</style>
 											Clasa a 11-a
 										</a>
 										<br>
-										<a href="subiecte/fizica/clasa a 12-a.pdf">
+										<a href="subiecte/fizica/clasa a 12-a.pdf" target="_blank">
 											<style type="text/css">
 												#fizica_clasa12:hover{cursor:pointer;}
 											</style>
@@ -398,28 +438,28 @@ try {
 									<center>
 										<h5>Gimnaziu</h5>
 										<br>
-										<a href="subiecte/geografie/clasa a 5-a.pdf">
+										<a href="subiecte/geografie/clasa a 5-a.pdf" target="_blank">
 											<style type="text/css">
 												#geografie_clasa5:hover{cursor:pointer;}
 											</style>
 											Clasa a 5-a
 										</a>
 										<br>
-										<a href="subiecte/geografie/clasa a 6-a.pdf">
+										<a href="subiecte/geografie/clasa a 6-a.pdf" target="_blank">
 											<style type="text/css">
 												#geografie_clasa6:hover{cursor:pointer;}
 											</style>
 											Clasa a 6-a
 										</a>
 										<br>
-										<a href="subiecte/geografie/clasa a 7-a.pdf">
+										<a href="subiecte/geografie/clasa a 7-a.pdf" target="_blank">
 											<style type="text/css">
 												#geografie_clasa7:hover{cursor:pointer;}
 											</style>
 											Clasa a 7-a
 										</a>
 										<br>
-										<a href="subiecte/geografie/clasa a 8-a.pdf">
+										<a href="subiecte/geografie/clasa a 8-a.pdf" target="_blank">
 											<style type="text/css">
 												#geografie_clasa8:hover{cursor:pointer;}
 											</style>
@@ -429,28 +469,28 @@ try {
 										
 										<h5>Liceu</h5>
 										<br>
-										<a href="subiecte/geografie/clasa a 9-a.pdf">
+										<a href="subiecte/geografie/clasa a 9-a.pdf" target="_blank">
 											<style type="text/css">
 												#geografie_clasa9:hover{cursor:pointer;}
 											</style>
 											Clasa a 9-a
 										</a>
 										<br>
-										<a href="subiecte/geografie/clasa a 10-a.pdf">
+										<a href="subiecte/geografie/clasa a 10-a.pdf" target="_blank">
 											<style type="text/css">
 												#geografie_clasa10:hover{cursor:pointer;}
 											</style>
 											Clasa a 10-a
 										</a>
 										<br>
-										<a href="subiecte/geografie/clasa a 11-a.pdf">
+										<a href="subiecte/geografie/clasa a 11-a.pdf" target="_blank">
 											<style type="text/css">
 												#geografie_clasa11:hover{cursor:pointer;}
 											</style>
 											Clasa a 11-a
 										</a>
 										<br>
-										<a href="subiecte/geografie/clasa a 12-a.pdf">
+										<a href="subiecte/geografie/clasa a 12-a.pdf" target="_blank">
 											<style type="text/css">
 												#geografie_clasa12:hover{cursor:pointer;}
 											</style>
@@ -502,6 +542,133 @@ try {
 						}
 					?>
 				</table>
+			</div>
+			
+			<div id="Rezultate_adaugare" class="tabcontent">
+				<form action="adaugarerezultate.php" method="post">
+					<center><br><h3>Adaugare Rezultate</h3><br></center>
+					<table id="tabel_adaugare_rezultate" align="center">
+						<tr>
+							<th>Cod</th>
+							<th>Nume</th>
+							<th>Prenume</th>
+							<th>Clasa</th>
+							<th>Scoala</th>
+							<th>Localitate</th>
+							<th>Judet</th>
+						    <th>Proba1</th>
+						    <th>Proba2</th>
+							<th>Proba3</th>  
+							<th>Materie</th>
+							<th>Adauga</th>
+						</tr>
+						
+						<?php
+							foreach($conn->query($query) as $row){
+								echo"<tr>";
+								echo "<td>".$row["cod"]."</td>";
+								echo "<td>".$row["nume_candidati"]."</td>";
+								echo "<td>".$row["prenume_candidati"]."</td>";
+								echo "<td>".$row["clasa_candidati"]."</td>";
+								echo "<td>".$row["scoala_candidati"]."</td>";
+								echo "<td>".$row["localitate_candidati"]."</td>";
+								echo "<td>".$row["judet_candidati"]."</td>";
+								echo "<td>".$row["proba1"]."</td>";
+								echo "<td>".$row["proba2"]."</td>";
+								echo "<td>".$row["proba3"]."</td>";
+								echo "<td>".$row["den_mat"]."</td>";
+								echo "<td><input type=submit name='Adauga' value='Adauga'>";
+								echo "</tr>";
+							}
+						?>
+					</table>
+				</form>
+			</div>
+			
+			<div id="Rezultate_stergere" class="tabcontent">
+				<form action="deleterez1.php" method="post">
+					<center><br><h3>Stergere Rezultate</h3><br></center>
+					<table id="tabel_stergere_rezultate" align="center">
+						<tr>
+							<th>Cod</th>
+							<th>Nume</th>
+							<th>Prenume</th>
+							<th>Clasa</th>
+							<th>Scoala</th>
+							<th>Localitate</th>
+							<th>Judet</th>
+						    <th>Proba1</th>
+						    <th>Proba2</th>
+							<th>Proba3</th>  
+							<th>Materie</th>
+							<th>Sterge</th>
+						</tr>
+						
+						 <?php
+							foreach($conn->query($query) as $row){
+								echo"<tr>";
+								echo "<form action=deleterez.php method=post>";
+								echo "<td>".$row["cod"]."</td>";
+								echo "<td>".$row["nume_candidati"]."</td>";
+								echo "<td>".$row["prenume_candidati"]."</td>";
+								echo "<td>".$row["clasa_candidati"]."</td>";
+								echo "<td>".$row["scoala_candidati"]."</td>";
+								echo "<td>".$row["localitate_candidati"]."</td>";
+								echo "<td>".$row["judet_candidati"]."</td>";
+								echo "<td>".$row["proba1"]."</td>";
+								echo "<td>".$row["proba2"]."</td>";
+								echo "<td>".$row["proba3"]."</td>";
+								echo "<td>".$row["den_mat"]."</td>";
+    		            		echo "<td><input type=submit name='Sterge' value='Sterge'>";
+    			                echo "</form>";
+    			                echo "</tr>";
+							}
+						?>
+					</table>
+				</form>
+			</div>
+			
+			<div id="Rezultate_modificare" class="tabcontent">
+				<form action="edit.php" method="post">
+					<center><br><h3>Modificare rezultate</h3><br></center>
+					<table id="tabel_modificare_rezultate" align="center">
+						<tr>
+							<th>Cod</th>
+							<th>Nume</th>
+							<th>Prenume</th>
+							<th>Clasa</th>
+							<th>Scoala</th>
+							<th>Localitate</th>
+							<th>Judet</th>
+						    <th>Proba1</th>
+						    <th>Proba2</th>
+							<th>Proba3</th>  
+							<th>Materie</th>
+							<th>Modifica</th>
+						</tr>
+						
+						<?php
+							foreach($conn->query($query) as $row){
+								echo"<tr>";
+								echo "<form action=edit1.php method=post>";
+								echo "<td>".$row["cod"]."</td>";
+								echo "<td>".$row["nume_candidati"]."</td>";
+								echo "<td>".$row["prenume_candidati"]."</td>";
+								echo "<td>".$row["clasa_candidati"]."</td>";
+								echo "<td>".$row["scoala_candidati"]."</td>";
+								echo "<td>".$row["localitate_candidati"]."</td>";
+								echo "<td>".$row["judet_candidati"]."</td>";
+								echo "<td><input type=text style=width:50px value=' ".$row["proba1"]." '></td>";
+								echo "<td><input type=text style=width:50px value=' ".$row["proba2"]." '></td>";
+								echo "<td><input type=text style=width:50px value=' ".$row["proba3"]." '></td>";
+								echo "<td>".$row["den_mat"]."</td>";
+    		            		echo "<td><input type=submit name='Modifica' value='Modifica'>";
+    			                echo "</form>";
+    			                echo "</tr>";
+							}
+						?>
+					</table>
+				</form>
 			</div>
 			
 			<div id="Contact" class="tabcontent">

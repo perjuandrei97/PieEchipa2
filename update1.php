@@ -1,5 +1,4 @@
-  <?php
-
+<?php
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
@@ -12,11 +11,7 @@ try {
       
     }catch(PDOException $e)
     {
-        
-    $conn = null ;
-    }
-    
-    
+	}
   if(isset($_POST['Modifica'])){
     
 $cod=filter_input(INPUT_POST, 'cod');
@@ -31,7 +26,7 @@ $localitate_candidati=filter_input(INPUT_POST, 'localitate_candidati');
   
 echo $sql;
 $conn->exec($sql);
-   header('Location:olimpiadacomisie.php');
+   header('Location:test.php');
 
   }else{
       echo"eroare";}

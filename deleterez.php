@@ -26,10 +26,10 @@ $proba2=filter_input(INPUT_POST, 'proba2');
 $proba3=filter_input(INPUT_POST, 'proba3');
 
  $sql = "DELETE FROM rezultate WHERE cod= '$cod' ";
-  
+
 echo $sql;
 $conn->exec($sql);
-   header('Location:olimpiadacomisie.php');
+   header('Location:test.php');
 
   }else{
       echo"eroare";}

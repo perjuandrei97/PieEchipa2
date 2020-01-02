@@ -1,9 +1,5 @@
 <html>
-<head>
-<title>Sterge Candidati</title>
-<body background="stergepic.jpg">
-<center>
-<h3>Sterge Candidati</h3>
+<body>
 <?php
 $cod=filter_input(INPUT_POST, 'cod');
 $nume_candidati=filter_input(INPUT_POST, 'nume_candidati');
@@ -35,6 +31,5 @@ $conn->query($sql);
     
 ?>
 
-</center>
 </body>
 </html>
