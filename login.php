@@ -8,9 +8,9 @@ session_start();
 //oezp48vf
 //tb129
 //10.13.11.6
-$user=filter_input(INPUT_POST, 'user');
-$pass=filter_input(INPUT_POST, 'pass');
-$rol=filter_input(INPUT_POST, 'rol');
+//$user=filter_input(INPUT_POST, 'user');
+//$pass=filter_input(INPUT_POST, 'pass');
+//$rol=filter_input(INPUT_POST, 'rol');
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
@@ -32,7 +32,7 @@ if(isset($_POST['login_submit'])){
 	else {
 		echo "<script>alert('Nume sau parola gresita!')</script>";
 	    echo "<script>window.open('test.php','_self')</script>";
-}
+	}
 }
 
 /* if(isset($_POST['login_inapoi'])){

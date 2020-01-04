@@ -2,13 +2,52 @@
 
 <?php 
 session_start();
-if(!isset($_SESSION['loggedIN'])) {
-	$_SESSION['loggedIN']="false";
-}
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
 $myDB="7YNzXacPRV";
+
+if(!isset($_SESSION['loggedIN'])) {
+	$_SESSION['loggedIN']='false';
+}
+if(isset($_SESSION['loggedIN'])){
+	if($_SESSION['loggedIN']=='false'){
+		if(isset($_POST['login_submit'])) {
+			login($servername,
+					$username,
+					$password,
+					$myDB,
+					$_POST['username_login'],
+					$_POST['parola_login']);
+		}
+	}
+}
+if(isset($_GET['logout'])){
+	if($_SESSION['loggedIN']=='true'){
+		logout();
+	}
+}
+
+function login($servername, $username, $password, $myDB, $user, $pass) {
+	$con=mysqli_connect($servername,$username,$password,$myDB);
+	$query="select * from utilizator where user='$user' and pass='$pass';";
+	$result=mysqli_query($con,$query);
+	if(mysqli_num_rows($result)!=0)
+	{
+		$_SESSION['loggedIN']="true";
+		header("Location:test.php");
+	}
+	else {
+		echo "<script>alert('Nume sau parola gresita!')</script>";
+		echo "<script>window.open('test.php','_self')</script>";
+	}
+}
+
+function logout() {
+	$_SESSION['loggedIN']="false";
+	header("Location: test.php");
+}
+
 try {
      $conn = new PDO("mysql:host=$servername;dbname=$myDB", $username, $password);
     // set the PDO error mode to exception
@@ -95,7 +134,7 @@ try {
 				<?php
 					if($_SESSION['loggedIN']=="true") {
 				?>
-				<a href="logout.php">
+				<a href="test.php?logout=true">
 					<button class="tablinks">Delogare</button>
 				</a>
 				<?php
@@ -724,7 +763,7 @@ try {
 						<div class="form-control rounded-left rounded-right"; style="border: 1px solid #dddddd; margin-top:120px; height:350px; background: #fafafa";>
 							<br><center><b><h4>Logare</h4></b></center><br>
 							<center>
-								<form class="form-group" method="post" action="login.php">
+								<form class="form-group" method="post" action="test.php">
 									<div class="row">
 										<div class="col-md-2"></div>
 										<div class="col-md-2"><label>Username: </label></div>
