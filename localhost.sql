@@ -63,24 +63,22 @@ INSERT INTO `candidati` (`cod`, `nume_candidati`, `prenume_candidati`, `adresa_c
 --
 
 CREATE TABLE `comisie` (
-  `cod` int(11) NOT NULL,
+  `cod` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `nume_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `prenume_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `telefon_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `username_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `parola_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL
+  `telefon_comisie` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `comisie`
 --
 
-INSERT INTO `comisie` (`cod`, `nume_comisie`, `prenume_comisie`, `telefon_comisie`, `email_comisie`, `username_comisie`, `parola_comisie`) VALUES
-(12, 'comisie2', 'comisie2', '0986547834', 'com@yahoo.com', 'comisie2', 'comisie2'),
-(13, 'cm1', 'cm1', '8343274329', 'cm1', 'cm1', 'cm1'),
-(14, 'comm', 'comm', '2174028147', 'comm', 'comm', 'comm'),
-(15, 'cc', 'cc', '3487239573', 'cc', 'cc', 'cc');
+INSERT INTO `comisie` (`cod`, `nume_comisie`, `prenume_comisie`, `telefon_comisie`, `email_comisie`) VALUES
+(12, 'comisie2', 'comisie2', '0986547834', 'com@yahoo.com'),
+(13, 'cm1', 'cm1', '8343274329', 'cm1'),
+(14, 'comm', 'comm', '2174028147', 'comm'),
+(15, 'cc', 'cc', '3487239573', 'cc');
 
 -- --------------------------------------------------------
 
@@ -181,21 +179,21 @@ INSERT INTO `rezultate` (`cod`, `nume_candidati`, `prenume_candidati`, `clasa_ca
 --
 
 CREATE TABLE `utilizator` (
-  `cod` int(11) NOT NULL,
+  `cod` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `user` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `pass` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `rol` varchar(45) COLLATE utf8_unicode_ci NOT NULL
+  `cod_comisie` int(11) NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `utilizator`
 --
 
-INSERT INTO `utilizator` (`cod`, `user`, `pass`) VALUES
-(62, 'cm1', 'cm1'),
-(63, 'comm', 'comm'),
-(64, 'comisie2', 'comisie2'),
-(65, 'cc', 'cc');
+INSERT INTO `utilizator` (`cod`, `user`, `pass`, `cod_comisie`) VALUES
+(62, 'cm1', MD5('cm1'), 12),
+(63, 'comm', MD5('comm'), 13),
+(64, 'comisie2', MD5('comisie2'), 14),
+(65, 'cc', MD5('cc'), 15);
 
 --
 -- Indexes for dumped tables
@@ -217,8 +215,6 @@ ALTER TABLE `candidati`
 --
 -- Indexes for table `comisie`
 --
-ALTER TABLE `comisie`
-  ADD PRIMARY KEY (`cod`);
 
 --
 -- Indexes for table `contact`
@@ -236,12 +232,13 @@ ALTER TABLE `rezultate`
 	ADD FOREIGN KEY (`cod_materie`)
 	REFERENCES `materie` (`cod_materie`);
 
+ALTER TABLE `utilizator`
+	ADD FOREIGN KEY (`cod_comisie`)
+	REFERENCES `comisie` (`cod`);
+
 --
 -- Indexes for table `utilizator`
 --
-ALTER TABLE `utilizator`
-  ADD PRIMARY KEY (`cod`);
-
 --
 -- AUTO_INCREMENT for dumped tables
 --

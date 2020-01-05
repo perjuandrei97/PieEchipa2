@@ -38,7 +38,7 @@ if(isset($_GET['logout'])){
 
 function login($servername, $username, $password, $myDB, $user, $pass) {
 	$con=mysqli_connect($servername,$username,$password,$myDB);
-	$query="select * from utilizator where user='$user' and pass='$pass';";
+	$query="select * from utilizator where user='$user' and pass=MD5('$pass');";
 	$result=mysqli_query($con,$query);
 	if(mysqli_num_rows($result)!=0)
 	{
