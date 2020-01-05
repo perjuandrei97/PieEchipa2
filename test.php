@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
+
 session_start();
 $servername = "127.0.0.1";
 $username = "root";
@@ -13,18 +14,25 @@ if(!isset($_SESSION['loggedIN'])) {
 if(isset($_SESSION['loggedIN'])){
 	if($_SESSION['loggedIN']=='false'){
 		if(isset($_POST['login_submit'])) {
-			login($servername,
-					$username,
-					$password,
-					$myDB,
-					$_POST['username_login'],
-					$_POST['parola_login']);
+			
+			if(login($servername,
+			$username, $password, $myDB,
+			$_POST['username_login'],
+			$_POST['parola_login'])){
+				
+				$_SESSION['loggedIN']="true";
+				header("Location: test.php");
+			
+			}
 		}
 	}
 }
 if(isset($_GET['logout'])){
+	
 	if($_SESSION['loggedIN']=='true'){
-		logout();
+		
+		$_SESSION['loggedIN']="false";
+		header("Location: test.php");
 	}
 }
 
@@ -34,18 +42,13 @@ function login($servername, $username, $password, $myDB, $user, $pass) {
 	$result=mysqli_query($con,$query);
 	if(mysqli_num_rows($result)!=0)
 	{
-		$_SESSION['loggedIN']="true";
-		header("Location:test.php");
+		return true;
 	}
 	else {
 		echo "<script>alert('Nume sau parola gresita!')</script>";
 		echo "<script>window.open('test.php','_self')</script>";
+		return false;
 	}
-}
-
-function logout() {
-	$_SESSION['loggedIN']="false";
-	header("Location: test.php");
 }
 
 try {
