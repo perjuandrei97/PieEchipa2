@@ -137,6 +137,7 @@ try {
 				<?php
 					if($_SESSION['loggedIN']=="true") {
 				?>
+				<button class="tablinks" onclick="openCity(event, 'Invitatie')">Invitare comisie</button>
 				<a href="test.php?logout=true">
 					<button class="tablinks">Delogare</button>
 				</a>
@@ -813,12 +814,45 @@ try {
 									<div class="col-md-12"><button class="btn btn-primary" name="regist_submit" id="inputbtn" type="submit" style="margin-top:10px;">Inregistrare</button></div>
 								</div>
 							</center>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>
-        </div>
+				
+			<div id="Invitatie" class="tabcontent">
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<form action="saveinvitation.php" method="post">
+							<center>
+								<div class="row">
+									<div class="col-md-4"><label>Cod invitatie:</label></div>
+									<div class="col-md-8">
+										<input type="text" id="text_cod_inv" name="cod_invitatie" class="form-control" value="" readonly/>
+										<input class="btn btn-primary" type="button" style="margin-top:10px;" onclick="genRandPassword();" value="Generare cod"/>
+									</div> <br><br><br>
+									
+									<div class="col-md-12"><button class="btn btn-primary" name="invite_submit" id="inputbtn" type="submit" style="margin-top:10px;">Salvare</button></div>
+								</div>
+							</center>
+					</div>
+				</div>
+			</div>
+		</div>
     </div>
+	
+	<script>
+		function genRandPassword() {
+			var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+			var string_length = 15;
+			var randomstring = '';
+			for (var i=0; i<string_length; i++) {
+				var rnum = Math.floor(Math.random() * chars.length);
+				randomstring += chars.substring(rnum,rnum+1);
+			}
+			document.getElementById("text_cod_inv").value = randomstring;
+		}
+	</script>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

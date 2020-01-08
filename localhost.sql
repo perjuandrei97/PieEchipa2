@@ -185,6 +185,11 @@ CREATE TABLE `utilizator` (
   `cod_comisie` int(11) NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
+CREATE TABLE `invitatie` (
+	`cod_inv` varchar(45) COLLATE utf8_unicode_ci NOT NULL PRIMARY KEY
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 --
 -- Dumping data for table `utilizator`
 --
