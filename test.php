@@ -70,6 +70,8 @@ try {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>document.getElementsByTagName("html")[0].className += " js";</script>
+	<link rel="stylesheet" href="assets/css/style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Olimpiada Nationala</title>
@@ -174,31 +176,31 @@ try {
 				<center>
 					<h3>Candidați</h3><br>
 					<div class="center"><input align="center" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cautare participanti ..." title="Selectati un criteriu si cautati"><br><br></div>
+					<table id="myTable" align="center">
+						<tr>
+							<th>Cod</th>
+							<th>Nume</th>
+							<th>Prenume</th>
+							<th>Clasa</th>
+							<th>Scoala</th>
+							<th>Judet</th>
+							<th>Localitate</th>
+						</tr>
+						<?php
+							foreach($conn->query($sql) as $row){
+								echo"<tr>";
+								echo "<td>".$row["cod"]."</td>";
+								echo "<td>".$row["nume_candidati"]."</td>";
+								echo "<td>".$row["prenume_candidati"]."</td>";
+								echo "<td>".$row["clasa_candidati"]."</td>";
+								echo "<td>".$row["scoala_candidati"]."</td>";
+								echo "<td>".$row["judet_candidati"]."</td>";
+								echo "<td>".$row["localitate_candidati"]."</td>";
+								echo "</tr>";
+							}
+						?>
+					</table>
 				</center>
-				<table id="myTable" align="center">
-					<tr>
-						<th>Cod</th>
-						<th>Nume</th>
-						<th>Prenume</th>
-						<th>Clasa</th>
-						<th>Scoala</th>
-						<th>Judet</th>
-						<th>Localitate</th>
-					</tr>
-					<?php
-						foreach($conn->query($sql) as $row){
-							echo"<tr>";
-							echo "<td>".$row["cod"]."</td>";
-							echo "<td>".$row["nume_candidati"]."</td>";
-							echo "<td>".$row["prenume_candidati"]."</td>";
-							echo "<td>".$row["clasa_candidati"]."</td>";
-							echo "<td>".$row["scoala_candidati"]."</td>";
-							echo "<td>".$row["judet_candidati"]."</td>";
-							echo "<td>".$row["localitate_candidati"]."</td>";
-							echo "</tr>";
-						}
-					?>
-				</table>
 				<script>
 				function myFunction() {
 				  var input, filter, table, tr, td, i, txtValue;
@@ -268,71 +270,73 @@ try {
 			
 			<div id="Candidati_stergere" class="tabcontent">
 				<form action="delete.php" method="post">
-					<center><br><h3>Stergere Candidati</h3><br></center>
-					<table id="tabel_stergere_candidati" align="center">
-						<tr>
-							<th>Cod</th>
-							<th>Nume</th>
-							<th>Prenume</th>
-							<th>Clasa</th>
-							<th>Scoala</th>
-							<th>Judet</th>
-							<th>Localitate</th>
-							<th>Sterge</th>
-						</tr>
-						
-						<?php
-							foreach($conn->query($sql) as $row){
-								echo"<tr>";
-								echo "<form action=delete1.php method=post>";
-								echo "<td><input type=text style=width:90px name=cod value='".$row['cod']."'s</td>";
-								echo "<td><input type=text style=width:113px name=nume_candidati value=' ".$row['nume_candidati']."'></td>";
-								echo "<td><input type=text style=width:154px name=prenume_candidati value=' ".$row['prenume_candidati']."'></td>";
-								echo "<td><input type=text style=width:110px name=clasa_candidati value=' ".$row['clasa_candidati']." '></td>";
-								echo "<td><input type=text style=width:149px name=scoala_candidati value=  ' ".$row['scoala_candidati']."'></td>";
-    		        			echo "<td><input type=text style=width:150px name=judet_candidati value=' ".$row['judet_candidati']." '></td>";
-    		        			echo "<td><input type=text style=width:166px name=localitate_candidati value= ' ".$row['localitate_candidati']."'></td>";
-    		            		echo "<td><input type=submit name='Sterge' value='Sterge'>";
-    			                echo "</form>";
-    			                echo "</tr>";
-							}
-						?>
-					</table>
+					<center><br><h3>Stergere Candidati</h3><br>
+						<table id="tabel_stergere_candidati" align="center">
+							<tr>
+								<th>Cod</th>
+								<th>Nume</th>
+								<th>Prenume</th>
+								<th>Clasa</th>
+								<th>Scoala</th>
+								<th>Judet</th>
+								<th>Localitate</th>
+								<th>Sterge</th>
+							</tr>
+							
+							<?php
+								foreach($conn->query($sql) as $row){
+									echo"<tr>";
+									echo "<form action=delete1.php method=post>";
+									echo "<td><input type=text style=width:90px name=cod value='".$row['cod']."'s</td>";
+									echo "<td><input type=text style=width:113px name=nume_candidati value=' ".$row['nume_candidati']."'></td>";
+									echo "<td><input type=text style=width:154px name=prenume_candidati value=' ".$row['prenume_candidati']."'></td>";
+									echo "<td><input type=text style=width:110px name=clasa_candidati value=' ".$row['clasa_candidati']." '></td>";
+									echo "<td><input type=text style=width:149px name=scoala_candidati value=  ' ".$row['scoala_candidati']."'></td>";
+									echo "<td><input type=text style=width:150px name=judet_candidati value=' ".$row['judet_candidati']." '></td>";
+									echo "<td><input type=text style=width:166px name=localitate_candidati value= ' ".$row['localitate_candidati']."'></td>";
+									echo "<td><input type=submit name='Sterge' value='Sterge'>";
+									echo "</form>";
+									echo "</tr>";
+								}
+							?>
+						</table>
+					</center>
 				</form>
 			</div>
 			
 			<div id="Candidati_modificare" class="tabcontent">
 				<form action="update.php" method="post">
-					<center><br><h3>Modificare Candidati</h3><br></center>
-					<table id="tabel_modificare_candidati" align="center">
-						<tr>
-							<th>Cod</th>
-							<th>Nume</th>
-							<th>Prenume</th>
-							<th>Clasa</th>
-							<th>Scoala</th>
-							<th>Judet</th>
-							<th>Localitate</th>
-							<th>Sterge</th>
-						</tr>
-						
-						<?php
-							foreach($conn->query($sql) as $row){
-								echo"<tr>";
-								echo "<form action=update1.php method=post>";
-								echo "<td><input type=text style=width:90px name=cod value='".$row['cod']."'s</td>";
-								echo "<td><input type=text style=width:113px name=nume_candidati value=' ".$row['nume_candidati']."'></td>";
-								echo "<td><input type=text style=width:154px name=prenume_candidati value=' ".$row['prenume_candidati']."'></td>";
-								echo "<td><input type=text style=width:110px name=clasa_candidati value=' ".$row['clasa_candidati']." '></td>";
-								echo "<td><input type=text style=width:149px name=scoala_candidati value=  ' ".$row['scoala_candidati']."'></td>";
-    		        			echo "<td><input type=text style=width:150px name=judet_candidati value=' ".$row['judet_candidati']." '></td>";
-    		        			echo "<td><input type=text style=width:166px name=localitate_candidati value= ' ".$row['localitate_candidati']."'></td>";
-    		            		echo "<td><input type=submit name='Modifica' value='Modifica'>";
-    			                echo "</form>";
-    			                echo "</tr>";
-							}
-						?>
-					</table>
+					<center><br><h3>Modificare Candidati</h3><br>
+						<table id="tabel_modificare_candidati" align="center">
+							<tr>
+								<th>Cod</th>
+								<th>Nume</th>
+								<th>Prenume</th>
+								<th>Clasa</th>
+								<th>Scoala</th>
+								<th>Judet</th>
+								<th>Localitate</th>
+								<th>Sterge</th>
+							</tr>
+							
+							<?php
+								foreach($conn->query($sql) as $row){
+									echo"<tr>";
+									echo "<form action=update1.php method=post>";
+									echo "<td><input type=text style=width:90px name=cod value='".$row['cod']."'s</td>";
+									echo "<td><input type=text style=width:113px name=nume_candidati value=' ".$row['nume_candidati']."'></td>";
+									echo "<td><input type=text style=width:154px name=prenume_candidati value=' ".$row['prenume_candidati']."'></td>";
+									echo "<td><input type=text style=width:110px name=clasa_candidati value=' ".$row['clasa_candidati']." '></td>";
+									echo "<td><input type=text style=width:149px name=scoala_candidati value=  ' ".$row['scoala_candidati']."'></td>";
+									echo "<td><input type=text style=width:150px name=judet_candidati value=' ".$row['judet_candidati']." '></td>";
+									echo "<td><input type=text style=width:166px name=localitate_candidati value= ' ".$row['localitate_candidati']."'></td>";
+									echo "<td><input type=submit name='Modifica' value='Modifica'>";
+									echo "</form>";
+									echo "</tr>";
+								}
+							?>
+						</table>
+					</center>
 				</form>
 			</div>
 
@@ -551,61 +555,21 @@ try {
 			<div id="Rezultate" class="tabcontent">
 				<center>
 					<h3>Rezultate</h3>
-				</center>
 				<br>
-				<table align="center">
-					<tr>
-						<th>Cod</th>
-						<th>Nume</th>
-						<th>Prenume</th>
-						<th>Clasa</th>
-						<th>Scoala</th>
-						<th>Judet</th>
-						<th>Localitate</th>
-						<th>Proba 1</th>
-						<th>Proba 2</th>
-						<th>Proba 3</th>
-						<th>Materie</th>
-					</tr>
-					<?php
-						foreach($conn->query($query) as $row){
-							echo"<tr>";
-							echo "<td>".$row["cod"]."</td>";
-							echo "<td>".$row["nume_candidati"]."</td>";
-							echo "<td>".$row["prenume_candidati"]."</td>";
-							echo "<td>".$row["clasa_candidati"]."</td>";
-							echo "<td>".$row["scoala_candidati"]."</td>";
-    						echo "<td>".$row["localitate_candidati"]."</td>";
-    						echo "<td>".$row["judet_candidati"]."</td>";
-    						echo "<td>".$row["proba1"]."</td>";
-    						echo "<td>".$row["proba2"]."</td>";
-    						echo "<td>".$row["proba3"]."</td>";
-							echo "<td>".$row["den_mat"]."</td>";
-    						echo "</tr>";
-						}
-					?>
-				</table>
-			</div>
-			
-			<div id="Rezultate_adaugare" class="tabcontent">
-				<form action="adaugarerezultate.php" method="post">
-					<center><br><h3>Adaugare Rezultate</h3><br></center>
-					<table id="tabel_adaugare_rezultate" align="center">
+					<table align="center">
 						<tr>
 							<th>Cod</th>
 							<th>Nume</th>
 							<th>Prenume</th>
 							<th>Clasa</th>
 							<th>Scoala</th>
-							<th>Localitate</th>
 							<th>Judet</th>
-						    <th>Proba1</th>
-						    <th>Proba2</th>
-							<th>Proba3</th>  
+							<th>Localitate</th>
+							<th>Proba 1</th>
+							<th>Proba 2</th>
+							<th>Proba 3</th>
 							<th>Materie</th>
-							<th>Adauga</th>
 						</tr>
-						
 						<?php
 							foreach($conn->query($query) as $row){
 								echo"<tr>";
@@ -620,97 +584,140 @@ try {
 								echo "<td>".$row["proba2"]."</td>";
 								echo "<td>".$row["proba3"]."</td>";
 								echo "<td>".$row["den_mat"]."</td>";
-								echo "<td><input type=submit name='Adauga' value='Adauga'>";
 								echo "</tr>";
 							}
 						?>
 					</table>
+				</center>
+			</div>
+			
+			<div id="Rezultate_adaugare" class="tabcontent">
+				<form action="adaugarerezultate.php" method="post">
+					<center><br><h3>Adaugare Rezultate</h3><br>
+						<table id="tabel_adaugare_rezultate" align="center">
+							<tr>
+								<th>Cod</th>
+								<th>Nume</th>
+								<th>Prenume</th>
+								<th>Clasa</th>
+								<th>Scoala</th>
+								<th>Localitate</th>
+								<th>Judet</th>
+								<th>Proba1</th>
+								<th>Proba2</th>
+								<th>Proba3</th>  
+								<th>Materie</th>
+								<th>Adauga</th>
+							</tr>
+							
+							<?php
+								foreach($conn->query($query) as $row){
+									echo"<tr>";
+									echo "<td>".$row["cod"]."</td>";
+									echo "<td>".$row["nume_candidati"]."</td>";
+									echo "<td>".$row["prenume_candidati"]."</td>";
+									echo "<td>".$row["clasa_candidati"]."</td>";
+									echo "<td>".$row["scoala_candidati"]."</td>";
+									echo "<td>".$row["localitate_candidati"]."</td>";
+									echo "<td>".$row["judet_candidati"]."</td>";
+									echo "<td>".$row["proba1"]."</td>";
+									echo "<td>".$row["proba2"]."</td>";
+									echo "<td>".$row["proba3"]."</td>";
+									echo "<td>".$row["den_mat"]."</td>";
+									echo "<td><input type=submit name='Adauga' value='Adauga'>";
+									echo "</tr>";
+								}
+							?>
+						</table>
+					</center>
 				</form>
 			</div>
 			
 			<div id="Rezultate_stergere" class="tabcontent">
 				<form action="deleterez1.php" method="post">
-					<center><br><h3>Stergere Rezultate</h3><br></center>
-					<table id="tabel_stergere_rezultate" align="center">
-						<tr>
-							<th>Cod</th>
-							<th>Nume</th>
-							<th>Prenume</th>
-							<th>Clasa</th>
-							<th>Scoala</th>
-							<th>Localitate</th>
-							<th>Judet</th>
-						    <th>Proba1</th>
-						    <th>Proba2</th>
-							<th>Proba3</th>  
-							<th>Materie</th>
-							<th>Sterge</th>
-						</tr>
-						
-						 <?php
-							foreach($conn->query($query) as $row){
-								echo"<tr>";
-								echo "<form action=deleterez.php method=post>";
-								echo "<td>".$row["cod"]."</td>";
-								echo "<td>".$row["nume_candidati"]."</td>";
-								echo "<td>".$row["prenume_candidati"]."</td>";
-								echo "<td>".$row["clasa_candidati"]."</td>";
-								echo "<td>".$row["scoala_candidati"]."</td>";
-								echo "<td>".$row["localitate_candidati"]."</td>";
-								echo "<td>".$row["judet_candidati"]."</td>";
-								echo "<td>".$row["proba1"]."</td>";
-								echo "<td>".$row["proba2"]."</td>";
-								echo "<td>".$row["proba3"]."</td>";
-								echo "<td>".$row["den_mat"]."</td>";
-    		            		echo "<td><input type=submit name='Sterge' value='Sterge'>";
-    			                echo "</form>";
-    			                echo "</tr>";
-							}
-						?>
-					</table>
+					<center><br><h3>Stergere Rezultate</h3><br>
+						<table id="tabel_stergere_rezultate" align="center">
+							<tr>
+								<th>Cod</th>
+								<th>Nume</th>
+								<th>Prenume</th>
+								<th>Clasa</th>
+								<th>Scoala</th>
+								<th>Localitate</th>
+								<th>Judet</th>
+								<th>Proba1</th>
+								<th>Proba2</th>
+								<th>Proba3</th>  
+								<th>Materie</th>
+								<th>Sterge</th>
+							</tr>
+							
+							 <?php
+								foreach($conn->query($query) as $row){
+									echo"<tr>";
+									echo "<form action=deleterez.php method=post>";
+									echo "<td>".$row["cod"]."</td>";
+									echo "<td>".$row["nume_candidati"]."</td>";
+									echo "<td>".$row["prenume_candidati"]."</td>";
+									echo "<td>".$row["clasa_candidati"]."</td>";
+									echo "<td>".$row["scoala_candidati"]."</td>";
+									echo "<td>".$row["localitate_candidati"]."</td>";
+									echo "<td>".$row["judet_candidati"]."</td>";
+									echo "<td>".$row["proba1"]."</td>";
+									echo "<td>".$row["proba2"]."</td>";
+									echo "<td>".$row["proba3"]."</td>";
+									echo "<td>".$row["den_mat"]."</td>";
+									echo "<td><input type=submit name='Sterge' value='Sterge'>";
+									echo "</form>";
+									echo "</tr>";
+								}
+							?>
+						</table>
+					</center>
 				</form>
 			</div>
 			
 			<div id="Rezultate_modificare" class="tabcontent">
 				<form action="edit.php" method="post">
-					<center><br><h3>Modificare rezultate</h3><br></center>
-					<table id="tabel_modificare_rezultate" align="center">
-						<tr>
-							<th>Cod</th>
-							<th>Nume</th>
-							<th>Prenume</th>
-							<th>Clasa</th>
-							<th>Scoala</th>
-							<th>Localitate</th>
-							<th>Judet</th>
-						    <th>Proba1</th>
-						    <th>Proba2</th>
-							<th>Proba3</th>  
-							<th>Materie</th>
-							<th>Modifica</th>
-						</tr>
-						
-						<?php
-							foreach($conn->query($query) as $row){
-								echo"<tr>";
-								echo "<form action=edit1.php method=post>";
-								echo "<td>".$row["cod"]."</td>";
-								echo "<td>".$row["nume_candidati"]."</td>";
-								echo "<td>".$row["prenume_candidati"]."</td>";
-								echo "<td>".$row["clasa_candidati"]."</td>";
-								echo "<td>".$row["scoala_candidati"]."</td>";
-								echo "<td>".$row["localitate_candidati"]."</td>";
-								echo "<td>".$row["judet_candidati"]."</td>";
-								echo "<td><input type=text style=width:50px value=' ".$row["proba1"]." '></td>";
-								echo "<td><input type=text style=width:50px value=' ".$row["proba2"]." '></td>";
-								echo "<td><input type=text style=width:50px value=' ".$row["proba3"]." '></td>";
-								echo "<td>".$row["den_mat"]."</td>";
-    		            		echo "<td><input type=submit name='Modifica' value='Modifica'>";
-    			                echo "</form>";
-    			                echo "</tr>";
-							}
-						?>
-					</table>
+					<center><br><h3>Modificare rezultate</h3><br>
+						<table id="tabel_modificare_rezultate" align="center">
+							<tr>
+								<th>Cod</th>
+								<th>Nume</th>
+								<th>Prenume</th>
+								<th>Clasa</th>
+								<th>Scoala</th>
+								<th>Localitate</th>
+								<th>Judet</th>
+								<th>Proba1</th>
+								<th>Proba2</th>
+								<th>Proba3</th>  
+								<th>Materie</th>
+								<th>Modifica</th>
+							</tr>
+							
+							<?php
+								foreach($conn->query($query) as $row){
+									echo"<tr>";
+									echo "<form action=edit1.php method=post>";
+									echo "<td>".$row["cod"]."</td>";
+									echo "<td>".$row["nume_candidati"]."</td>";
+									echo "<td>".$row["prenume_candidati"]."</td>";
+									echo "<td>".$row["clasa_candidati"]."</td>";
+									echo "<td>".$row["scoala_candidati"]."</td>";
+									echo "<td>".$row["localitate_candidati"]."</td>";
+									echo "<td>".$row["judet_candidati"]."</td>";
+									echo "<td><input type=text style=width:50px value=' ".$row["proba1"]." '></td>";
+									echo "<td><input type=text style=width:50px value=' ".$row["proba2"]." '></td>";
+									echo "<td><input type=text style=width:50px value=' ".$row["proba3"]." '></td>";
+									echo "<td>".$row["den_mat"]."</td>";
+									echo "<td><input type=submit name='Modifica' value='Modifica'>";
+									echo "</form>";
+									echo "</tr>";
+								}
+							?>
+						</table>
+					</center>
 				</form>
 			</div>
 			
@@ -758,6 +765,158 @@ try {
 						</div>
 					</div>
 				</div>
+			</div>
+			
+			<div id="Intrebari" class="tabcontent">
+			<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
+	<ul class="cd-faq__categories">
+		<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#basics" style="background: #7386D5">Lucruri de bază</a></li>
+		<li><a class="cd-faq__category truncate" href="#cont" style="background: #7386D5">Cont</a></li>
+		<li><a class="cd-faq__category truncate" href="#subiecte" style="background: #7386D5">Subiecte</a></li>
+		<li><a class="cd-faq__category truncate" href="#rezultate" style="background: #7386D5">Rezultate</a></li>
+	
+	</ul> <!-- cd-faq__categories -->
+
+	<div class="cd-faq__items">
+		<ul id="basics" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Lucruri de bază</h2></li>
+			<li class="cd-faq__item">
+				
+				<div class="cd-faq__content">
+          <div class="text-component">
+           
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Cine suntem noi?</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<p>Suntem o unitate scolara ce realizeaza olimpiade nationale la diferite materii,precum matematica,fizica si geografie atat pentru gimnaziu cat si pentru liceu.</p>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Cine imi poate vedea rezultatele?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Rezultatele sunt publice pe site.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Cine sunt partenerii aceste unitati scolare?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Unitatea noastra scolara este in parteneriat cu M.E.N (Ministerul Educatiei Nationale),dar si cu UE.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="cont" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Cont</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Cum ma inregistrez?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Pentru a te inregistra, ai nevoie de o invitatie de la membrii comisiei.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Pot sa ma deloghez de pe cont?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Da,te poti deconecta de pe cont,astfel datele tale raman in siguranta. </p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="subiecte" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Subiecte</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>
+					Cine realizeaza subiectele?
+				</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Subiectele sunt realizate de profesori competenti si verificate de alte comisii pentru a elimina orice eroare si pentru a fi cat mai corecte.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Unde pot gasi subiectele?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Dupa logarea in contul propriu,subiectele se gasesc in sectiunea de "Subiecte",unde sunt organizate pe materii si pe anii de studiu.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Pot vedea subiecte de la alte materii si de la alte clase?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Da,atata timp cat sunteti logat in cont,puteti vizualiza subiectele de la toate olimpiadele noastre de la orice clasa.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Subiectele de la olimpiada se pot descarca?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Da,dupa ce ati gasit materia dorita si clasa,dati click pe aceasta si vi se va deschide o pagina noua in care apare subiectul.In partea de jos a ecranului,aveti butonul de download.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="rezultate" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Rezultate</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Cine posteaza rezultatele?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Rezultatele sunt postate de membrii comisiei,in pagine de rezultate.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Cand pot verifica aparitia notelor la o materie?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Se poate verifica dupa 24 de ore de la incheierea oficiala a olimpiadei.Aceasta poate varia in functie de numarul de concurenti,de dificultate si de disponibilitatea membrilor comisiei.Rezultatele vor aparea in maxim 3 zile de la incheiera olimpiadei.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>In cazul in care observ o nota gresita la o materie,ce se poate face?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>In cazul in care vedeti o greseala la afisarea notelor,va rugam sa ne contactati.Pagina de contact o gasiti in tabul de contact si acolo ne puteti semnala orice problema.Dupa trimiterea mesajului,administratorul va va aproba cererea in 24 de ore,urmand a fi verificata de o comisie in maxim 24 de ore.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		
+	</div> <!-- cd-faq__items -->
+
+	<a href="#0" class="cd-faq__close-panel text-replace">Close</a>
+  
+  <div class="cd-faq__overlay" aria-hidden="true"></div>
+</section>
 			</div>
 			
 			<div id="Autentificare" class="tabcontent">
