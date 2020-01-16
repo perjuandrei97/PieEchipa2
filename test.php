@@ -155,6 +155,9 @@ try {
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
+					<button type="button" id="sidebarCollapse" class="btn btn-info">
+						<span><-/-></span>
+					</button>
 					<h3>Parteneri oficiali</h3>
 					<img src="imagini/1.png" alt="" style="max-height: 100px; max-width:25%;">
 					<img src="imagini/2.png" alt="" style="max-height: 100px; max-width:25%;">
@@ -768,18 +771,18 @@ try {
 			</div>
 			
 			<div id="Intrebari" class="tabcontent">
-			<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
+				<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
 	<ul class="cd-faq__categories">
-		<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#basics" style="background: #7386D5">Lucruri de bază</a></li>
-		<li><a class="cd-faq__category truncate" href="#cont" style="background: #7386D5">Cont</a></li>
-		<li><a class="cd-faq__category truncate" href="#subiecte" style="background: #7386D5">Subiecte</a></li>
-		<li><a class="cd-faq__category truncate" href="#rezultate" style="background: #7386D5">Rezultate</a></li>
+		<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#basics" style="background: #7386D5; font-size: 13px;">Lucruri de bază</a></li>
+		<li><a class="cd-faq__category truncate" href="#cont" style="background: #7386D5; font-size: 13px;">Cont</a></li>
+		<li><a class="cd-faq__category truncate" href="#subiecte" style="background: #7386D5; font-size: 13px;">Subiecte</a></li>
+		<li><a class="cd-faq__category truncate" href="#rezultate" style="background: #7386D5; font-size: 13px;">Rezultate</a></li>
 	
 	</ul> <!-- cd-faq__categories -->
 
 	<div class="cd-faq__items">
 		<ul id="basics" class="cd-faq__group">
-			<li class="cd-faq__title"><h2>Lucruri de bază</h2></li>
+			<li class="cd-faq__title"><h2 style="font-size: 15px;">Lucruri de bază</h2></li>
 			<li class="cd-faq__item">
 				
 				<div class="cd-faq__content">
@@ -789,122 +792,122 @@ try {
 				</div> <!-- cd-faq__content -->
 			</li>
 
-			<li class="cd-faq__item">
+			<li class="cd-faq__item" >
 				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Cine suntem noi?</span></a>
 				<div class="cd-faq__content">
 					<div class="text-component">
-						<p>Suntem o unitate scolara ce realizeaza olimpiade nationale la diferite materii,precum matematica,fizica si geografie atat pentru gimnaziu cat si pentru liceu.</p>
+						<br><p style="color: #000000; font-size: 15px;">Suntem o unitate scolara ce realizeaza olimpiade nationale la diferite materii,precum matematica,fizica si geografie atat pentru gimnaziu cat si pentru liceu.</p>
 					</div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Cine imi poate vedea rezultatele?</span></a>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Cine imi poate vedea rezultatele?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Rezultatele sunt publice pe site.</p>
+            <br><p style="color: #000000; font-size: 15px;">Rezultatele sunt publice pe site.</p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Cine sunt partenerii aceste unitati scolare?</span></a>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Cine sunt partenerii aceste unitati scolare?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Unitatea noastra scolara este in parteneriat cu M.E.N (Ministerul Educatiei Nationale),dar si cu UE.</p>
+            <br><p style="color: #000000; font-size: 15px;">Unitatea noastra scolara este in parteneriat cu M.E.N (Ministerul Educatiei Nationale),dar si cu UE.</p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 		</ul> <!-- cd-faq__group -->
 
 		<ul id="cont" class="cd-faq__group">
-			<li class="cd-faq__title"><h2>Cont</h2></li>
+			<li class="cd-faq__title"><h2 style="font-size: 15px;">Cont</h2></li>
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Cum ma inregistrez?</span></a>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Cum ma inregistrez?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Pentru a te inregistra, ai nevoie de o invitatie de la membrii comisiei.</p>
+            <br><p style="color: #000000; font-size: 15px;">Pentru a te inregistra, ai nevoie de o invitatie de la membrii comisiei.</p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Pot sa ma deloghez de pe cont?</span></a>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Pot sa ma deloghez de pe cont?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Da,te poti deconecta de pe cont,astfel datele tale raman in siguranta. </p>
+            <br><p style="color: #000000; font-size: 15px;">Da,te poti deconecta de pe cont,astfel datele tale raman in siguranta. </p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 		</ul> <!-- cd-faq__group -->
 
 		<ul id="subiecte" class="cd-faq__group">
-			<li class="cd-faq__title"><h2>Subiecte</h2></li>
+			<li class="cd-faq__title"><h2  style="font-size: 15px;">Subiecte</h2></li>
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>
 					Cine realizeaza subiectele?
 				</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Subiectele sunt realizate de profesori competenti si verificate de alte comisii pentru a elimina orice eroare si pentru a fi cat mai corecte.</p>
+            <br><p style="color: #000000; font-size: 15px;">Subiectele sunt realizate de profesori competenti si verificate de alte comisii pentru a elimina orice eroare si pentru a fi cat mai corecte.</p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Unde pot gasi subiectele?</span></a>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Unde pot gasi subiectele?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Dupa logarea in contul propriu,subiectele se gasesc in sectiunea de "Subiecte",unde sunt organizate pe materii si pe anii de studiu.</p>
+			<br><p style="color: #000000; font-size: 15px;">Dupa logarea in contul propriu,subiectele se gasesc in sectiunea de "Subiecte",unde sunt organizate pe materii si pe anii de studiu.</p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Pot vedea subiecte de la alte materii si de la alte clase?</span></a>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Pot vedea subiecte de la alte materii si de la alte clase?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Da,atata timp cat sunteti logat in cont,puteti vizualiza subiectele de la toate olimpiadele noastre de la orice clasa.</p>
+           <br><p style="color: #000000; font-size: 15px;">Da,atata timp cat sunteti logat in cont,puteti vizualiza subiectele de la toate olimpiadele noastre de la orice clasa.</p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Subiectele de la olimpiada se pot descarca?</span></a>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Subiectele de la olimpiada se pot descarca?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Da,dupa ce ati gasit materia dorita si clasa,dati click pe aceasta si vi se va deschide o pagina noua in care apare subiectul.In partea de jos a ecranului,aveti butonul de download.</p>
+            <br><p style="color: #000000; font-size: 15px;">Da,dupa ce ati gasit materia dorita si clasa,dati click pe aceasta si vi se va deschide o pagina noua in care apare subiectul.In partea de jos a ecranului,aveti butonul de download.</p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 		</ul> <!-- cd-faq__group -->
 
 		<ul id="rezultate" class="cd-faq__group">
-			<li class="cd-faq__title"><h2>Rezultate</h2></li>
+			<li class="cd-faq__title"><h2 style="font-size: 15px;">Rezultate</h2></li>
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Cine posteaza rezultatele?</span></a>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Cine posteaza rezultatele?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Rezultatele sunt postate de membrii comisiei,in pagine de rezultate.</p>
+            <br><p style="color: #000000">Rezultatele sunt postate de membrii comisiei,in pagine de rezultate.</p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Cand pot verifica aparitia notelor la o materie?</span></a>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>Cand pot verifica aparitia notelor la o materie?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Se poate verifica dupa 24 de ore de la incheierea oficiala a olimpiadei.Aceasta poate varia in functie de numarul de concurenti,de dificultate si de disponibilitatea membrilor comisiei.Rezultatele vor aparea in maxim 3 zile de la incheiera olimpiadei.</p>
+            <br><p style="color: #000000">Se poate verifica dupa 24 de ore de la incheierea oficiala a olimpiadei.Aceasta poate varia in functie de numarul de concurenti,de dificultate si de disponibilitatea membrilor comisiei.Rezultatele vor aparea in maxim 3 zile de la incheiera olimpiadei.</p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>In cazul in care observ o nota gresita la o materie,ce se poate face?</span></a>
+				<a class="cd-faq__trigger" href="#0" style="background: #7386D5; color:#ffffff"><span>In cazul in care observ o nota gresita la o materie,ce se poate face?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>In cazul in care vedeti o greseala la afisarea notelor,va rugam sa ne contactati.Pagina de contact o gasiti in tabul de contact si acolo ne puteti semnala orice problema.Dupa trimiterea mesajului,administratorul va va aproba cererea in 24 de ore,urmand a fi verificata de o comisie in maxim 24 de ore.</p>
+            <br><p style="color: #000000">In cazul in care vedeti o greseala la afisarea notelor,va rugam sa ne contactati.Pagina de contact o gasiti in tabul de contact si acolo ne puteti semnala orice problema.Dupa trimiterea mesajului,administratorul va va aproba cererea in 24 de ore,urmand a fi verificata de o comisie in maxim 24 de ore.</p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
@@ -1021,7 +1024,8 @@ try {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
+	<script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+	<script src="assets/js/main.js"></script> 
     <script type="text/javascript">
         $(document).ready(function () {
             $("#sidebar").mCustomScrollbar({
